@@ -1,0 +1,29 @@
+{
+  "results": [
+    {
+       "name" : "test_case_1384429280/Company Controller Spec/get all",
+       "status" : "Success",
+       "durationMillis" : "390",
+       "annotations" : "",
+       "fullyQualifiedClassName" : "test_case_1384429280",
+       "labels" : ["Company Controller Spec", "get all"]
+    },
+    {
+       "name" : "test_case_1384429280/Company Controller Spec/get by id",
+       "status" : "Success",
+       "durationMillis" : "390",
+       "annotations" : "",
+       "fullyQualifiedClassName" : "test_case_1384429280",
+       "labels" : ["Company Controller Spec", "get by id"]
+    },
+    {
+       "name" : "test_case_1384429280/Company Controller Spec/post company",
+       "status" : "Success",
+       "durationMillis" : "390",
+       "annotations" : "",
+       "fullyQualifiedClassName" : "test_case_1384429280",
+       "labels" : ["Company Controller Spec", "post company"]
+    }
+
+  ]
+}

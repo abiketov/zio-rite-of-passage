@@ -1,0 +1,4 @@
+[debug] [root-test] Classpath dependencies List(foundations, server)
+[debug] [root-test] Dependencies from configurations List(root)
+[debug] Bloop wrote the configuration of project 'root-test' to '/Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/.bloop/root-test.json'
+[success] Generated .bloop/root-test.json

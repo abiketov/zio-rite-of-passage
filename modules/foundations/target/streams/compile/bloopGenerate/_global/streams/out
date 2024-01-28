@@ -1,0 +1,4 @@
+[debug] [foundations] Classpath dependencies List()
+[debug] [foundations] Dependencies from configurations List()
+[debug] Bloop wrote the configuration of project 'foundations' to '/Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/.bloop/foundations.json'
+[success] Generated .bloop/foundations.json

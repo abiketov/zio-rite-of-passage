@@ -1,0 +1,603 @@
+2024.01.22 19:47:58 INFO  Started: Metals version 1.2.0 in folders '/Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage' for client Visual Studio Code 1.85.2.
+2024.01.22 19:47:58 WARN  Build server is not auto-connectable.
+2024.01.22 19:48:06 INFO  running '/Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /var/folders/tn/g0d9_k411m91_tny1pr673nr0000gn/T/metals13793349553693853834/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.01.22 19:48:06 WARN  no build target for: /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/metals.sbt
+2024.01.22 19:48:06 WARN  no build target for: /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/project/metals.sbt
+2024.01.22 19:48:06 INFO  skipping build import with status 'Started'
+2024.01.22 19:48:07 INFO  [info] welcome to sbt 1.9.8 (Oracle Corporation Java 21.0.2)
+2024.01.22 19:48:08 INFO  [info] loading global plugins from /Users/abadmin/.sbt/1.0/plugins
+2024.01.22 19:48:09 INFO  no build target found for /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/project/metals.sbt. Using presentation compiler with project's scala-library version: 3.3.1
+2024.01.22 19:48:10 INFO  [info] loading settings for project zio-rite-of-passage-build-build-build from metals.sbt ...
+2024.01.22 19:48:10 INFO  [info] loading project definition from /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/project/project
+2024.01.22 19:48:12 INFO  [info] loading settings for project zio-rite-of-passage-build-build from metals.sbt ...
+2024.01.22 19:48:12 INFO  [info] loading project definition from /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/project
+2024.01.22 19:48:14 INFO  [success] Generated .bloop/zio-rite-of-passage-build-build.json
+2024.01.22 19:48:14 INFO  [success] Total time: 2 s, completed Jan 22, 2024, 7:48:14 p.m.
+2024.01.22 19:48:14 INFO  [info] loading settings for project zio-rite-of-passage-build from metals.sbt,plugins.sbt ...
+2024.01.22 19:48:14 INFO  [info] loading project definition from /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project
+2024.01.22 19:48:16 INFO  [success] Generated .bloop/zio-rite-of-passage-build.json
+2024.01.22 19:48:16 INFO  [success] Total time: 1 s, completed Jan 22, 2024, 7:48:16 p.m.
+2024.01.22 19:48:18 INFO  [info] loading settings for project root from build.sbt ...
+2024.01.22 19:48:18 INFO  [info] set current project to zio-rite-of-passage (in build file:/Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/)
+2024.01.22 19:48:18 INFO  [warn] .env file not found (fileName=.env), no .env environment configured.
+2024.01.22 19:48:19 INFO  [success] Generated .bloop/foundations.json
+2024.01.22 19:48:19 INFO  [success] Generated .bloop/foundations-test.json
+2024.01.22 19:48:19 INFO  [success] Generated .bloop/root.json
+2024.01.22 19:48:19 INFO  [success] Generated .bloop/root-test.json
+2024.01.22 19:48:19 INFO  [success] Total time: 1 s, completed Jan 22, 2024, 7:48:19 p.m.
+2024.01.22 19:48:19 INFO  time: ran 'sbt bloopInstall' in 13s
+2024.01.22 19:48:19 INFO  Attempting to connect to the build server...
+2024.01.22 19:48:19 INFO  Setting up current java home /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home in /Users/abadmin/.bloop/bloop.json
+2024.01.22 19:48:22 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.22 19:48:22 INFO  Attempting to connect to the build server...
+2024.01.22 19:48:22 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.22 19:48:22 INFO  Attempting to connect to the build server...
+2024.01.22 19:48:22 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.22 19:48:22 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.22 19:48:22 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/project/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.22 19:48:23 INFO  time: Connected to build server in 4.13s
+2024.01.22 19:48:23 INFO  Connected to Build server: Bloop v1.5.13
+2024.01.22 19:48:24 INFO  time: Imported build in 0.12s
+2024.01.22 19:48:29 INFO  time: indexed workspace in 5.63s
+2024.01.22 19:48:54 INFO  compiling foundations (5 scala sources)
+2024.01.22 19:49:05 INFO  time: compiled foundations in 10s
+2024.01.22 19:53:38 INFO  time: code lens generation in 2.22s
+Jan 22, 2024 7:54:06 P.M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint fallbackResponseError
+SEVERE: Internal error: scala.reflect.internal.FatalError: bad constant pool tag 9 at byte 1275
+java.util.concurrent.CompletionException: scala.reflect.internal.FatalError: bad constant pool tag 9 at byte 1275
+	at java.base/java.util.concurrent.CompletableFuture.encodeThrowable(CompletableFuture.java:332)
+	at java.base/java.util.concurrent.CompletableFuture.completeThrowable(CompletableFuture.java:347)
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:708)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture.completeExceptionally(CompletableFuture.java:2194)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1(CancelTokens.scala:40)
+	at scala.meta.internal.metals.CancelTokens$.$anonfun$future$1$adapted(CancelTokens.scala:38)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:484)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+Caused by: scala.reflect.internal.FatalError: bad constant pool tag 9 at byte 1275
+	at scala.reflect.internal.Reporting.abort(Reporting.scala:69)
+	at scala.reflect.internal.Reporting.abort$(Reporting.scala:65)
+	at scala.reflect.internal.SymbolTable.abort(SymbolTable.scala:28)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.errorBadTag(ClassfileParser.scala:389)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.firstExpecting(ClassfileParser.scala:231)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.getName(ClassfileParser.scala:240)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.getExternalName(ClassfileParser.scala:252)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.getType(ClassfileParser.scala:319)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser$ConstantPool.getType(ClassfileParser.scala:318)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser.unpickleOrParseInnerClasses(ClassfileParser.scala:1163)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser.parseClass(ClassfileParser.scala:467)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser.$anonfun$parse$2(ClassfileParser.scala:160)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser.$anonfun$parse$1(ClassfileParser.scala:146)
+	at scala.tools.nsc.symtab.classfile.ClassfileParser.parse(ClassfileParser.scala:129)
+	at scala.tools.nsc.symtab.SymbolLoaders$ClassfileLoader.doComplete(SymbolLoaders.scala:343)
+	at scala.tools.nsc.symtab.SymbolLoaders$SymbolLoader.complete(SymbolLoaders.scala:250)
+	at scala.tools.nsc.symtab.SymbolLoaders$SymbolLoader.load(SymbolLoaders.scala:269)
+	at scala.reflect.internal.Symbols$Symbol.$anonfun$typeParams$1(Symbols.scala:1772)
+	at scala.reflect.internal.Symbols$Symbol.completeTypeParams$1(Symbols.scala:1772)
+	at scala.reflect.internal.Symbols$Symbol.typeParams(Symbols.scala:1779)
+	at scala.reflect.internal.Types$NoArgsTypeRef.typeParams(Types.scala:1888)
+	at scala.reflect.internal.Types$NoArgsTypeRef.isHigherKinded(Types.scala:1887)
+	at scala.reflect.internal.Definitions$DefinitionsClass.isFunctionTypeDirect(Definitions.scala:729)
+	at scala.reflect.internal.Types$TypeRef.customToString(Types.scala:2355)
+	at scala.reflect.internal.Types$TypeRef.safeToString(Types.scala:2384)
+	at scala.reflect.internal.tpe.TypeToStrings.typeToString(TypeToStrings.scala:55)
+	at scala.reflect.internal.tpe.TypeToStrings.typeToString$(TypeToStrings.scala:34)
+	at scala.reflect.internal.SymbolTable.typeToString(SymbolTable.scala:28)
+	at scala.reflect.internal.Types$Type.toString(Types.scala:949)
+	at java.base/java.lang.String.valueOf(String.java:4465)
+	at scala.collection.mutable.StringBuilder.append(StringBuilder.scala:203)
+	at scala.collection.TraversableOnce$appender$1.apply(TraversableOnce.scala:414)
+	at scala.collection.TraversableOnce$appender$1.apply(TraversableOnce.scala:410)
+	at scala.collection.immutable.List.foreach(List.scala:431)
+	at scala.collection.TraversableOnce.addString(TraversableOnce.scala:424)
+	at scala.collection.TraversableOnce.addString$(TraversableOnce.scala:407)
+	at scala.collection.AbstractTraversable.addString(Traversable.scala:108)
+	at scala.collection.TraversableOnce.mkString(TraversableOnce.scala:377)
+	at scala.collection.TraversableOnce.mkString$(TraversableOnce.scala:376)
+	at scala.collection.AbstractTraversable.mkString(Traversable.scala:108)
+	at scala.reflect.internal.Types$TypeRef.argsString(Types.scala:2313)
+	at scala.reflect.internal.Types$TypeRef.safeToString(Types.scala:2386)
+	at scala.reflect.internal.tpe.TypeToStrings.typeToString(TypeToStrings.scala:55)
+	at scala.reflect.internal.tpe.TypeToStrings.typeToString$(TypeToStrings.scala:34)
+	at scala.reflect.internal.SymbolTable.typeToString(SymbolTable.scala:28)
+	at scala.reflect.internal.Types$Type.toString(Types.scala:949)
+	at java.base/java.lang.String.valueOf(String.java:4465)
+	at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
+	at scala.reflect.internal.Symbols$Symbol.loop$4(Symbols.scala:2789)
+	at scala.reflect.internal.Symbols$Symbol.infoString(Symbols.scala:2792)
+	at scala.meta.internal.pc.completions.Completions.infoString(Completions.scala:278)
+	at scala.meta.internal.pc.completions.Completions.infoString$(Completions.scala:259)
+	at scala.meta.internal.pc.MetalsGlobal.infoString(MetalsGlobal.scala:33)
+	at scala.meta.internal.pc.completions.Completions.detailString(Completions.scala:295)
+	at scala.meta.internal.pc.completions.Completions.detailString$(Completions.scala:289)
+	at scala.meta.internal.pc.MetalsGlobal.detailString(MetalsGlobal.scala:33)
+	at scala.meta.internal.pc.CompletionProvider.$anonfun$completions$1(CompletionProvider.scala:83)
+	at scala.collection.Iterator$$anon$10.next(Iterator.scala:461)
+	at scala.collection.Iterator.toStream(Iterator.scala:1417)
+	at scala.collection.Iterator.toStream$(Iterator.scala:1416)
+	at scala.collection.AbstractIterator.toStream(Iterator.scala:1431)
+	at scala.collection.Iterator.$anonfun$toStream$1(Iterator.scala:1417)
+	at scala.collection.immutable.Stream$Cons.tail(Stream.scala:1173)
+	at scala.collection.immutable.Stream$Cons.tail(Stream.scala:1163)
+	at scala.collection.immutable.StreamIterator.$anonfun$next$1(Stream.scala:1061)
+	at scala.collection.immutable.StreamIterator$LazyCell.v$lzycompute(Stream.scala:1050)
+	at scala.collection.immutable.StreamIterator$LazyCell.v(Stream.scala:1050)
+	at scala.collection.immutable.StreamIterator.hasNext(Stream.scala:1055)
+	at scala.collection.convert.Wrappers$IteratorWrapper.hasNext(Wrappers.scala:32)
+	at scala.collection.convert.JavaCollectionWrappers$JIteratorWrapper.hasNext(JavaCollectionWrappers.scala:46)
+	at scala.collection.IterableOnceOps.foreach(IterableOnce.scala:576)
+	at scala.collection.IterableOnceOps.foreach$(IterableOnce.scala:574)
+	at scala.collection.AbstractIterable.foreach(Iterable.scala:933)
+	at scala.meta.internal.metals.AdjustLspData.adjustCompletionListInPlace(AdjustLspData.scala:72)
+	at scala.meta.internal.metals.AdjustLspData.adjustCompletionListInPlace$(AdjustLspData.scala:71)
+	at scala.meta.internal.metals.AdjustedLspData.adjustCompletionListInPlace(AdjustLspData.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$completions$2(Compilers.scala:626)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	... 3 more
+
+2024.01.22 19:54:19 INFO  running '/Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /var/folders/tn/g0d9_k411m91_tny1pr673nr0000gn/T/metals17162990748779326792/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.01.22 19:54:20 INFO  [info] welcome to sbt 1.9.8 (Oracle Corporation Java 21.0.2)
+2024.01.22 19:54:20 INFO  [info] loading global plugins from /Users/abadmin/.sbt/1.0/plugins
+2024.01.22 19:54:21 INFO  [info] loading settings for project zio-rite-of-passage-build-build-build from metals.sbt ...
+2024.01.22 19:54:21 INFO  [info] loading project definition from /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/project/project
+2024.01.22 19:54:21 INFO  [info] loading settings for project zio-rite-of-passage-build-build from metals.sbt ...
+2024.01.22 19:54:21 INFO  [info] loading project definition from /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/project
+2024.01.22 19:54:23 INFO  [success] Generated .bloop/zio-rite-of-passage-build-build.json
+2024.01.22 19:54:23 INFO  [success] Total time: 1 s, completed Jan 22, 2024, 7:54:23 p.m.
+2024.01.22 19:54:23 INFO  [info] loading settings for project zio-rite-of-passage-build from metals.sbt,plugins.sbt ...
+2024.01.22 19:54:23 INFO  [info] loading project definition from /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project
+2024.01.22 19:54:23 INFO  [success] Generated .bloop/zio-rite-of-passage-build.json
+2024.01.22 19:54:23 INFO  [success] Total time: 1 s, completed Jan 22, 2024, 7:54:24 p.m.
+2024.01.22 19:54:27 INFO  [info] loading settings for project root from build.sbt ...
+2024.01.22 19:54:27 ERROR java.lang.RuntimeException: Overlapping output directories:/Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/modules/foundations/target:
+2024.01.22 19:54:27 ERROR 	ProjectRef(file:/Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/,foundations)
+2024.01.22 19:54:27 ERROR 	ProjectRef(file:/Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/,server)
+2024.01.22 19:54:27 ERROR 	at scala.sys.package$.error(package.scala:30)
+2024.01.22 19:54:27 ERROR 	at sbt.internal.Load$.$anonfun$apply$7(Load.scala:265)
+2024.01.22 19:54:27 ERROR 	at scala.Option.foreach(Option.scala:407)
+2024.01.22 19:54:27 ERROR 	at sbt.internal.Load$.apply(Load.scala:265)
+2024.01.22 19:54:27 ERROR 	at sbt.internal.Load$.defaultLoad(Load.scala:57)
+2024.01.22 19:54:27 ERROR 	at sbt.BuiltinCommands$.liftedTree1$1(Main.scala:964)
+2024.01.22 19:54:27 ERROR 	at sbt.BuiltinCommands$.doLoadProject(Main.scala:964)
+2024.01.22 19:54:27 ERROR 	at sbt.BuiltinCommands$.$anonfun$loadProjectImpl$2(Main.scala:917)
+2024.01.22 19:54:27 ERROR 	at sbt.Command$.$anonfun$applyEffect$4(Command.scala:151)
+2024.01.22 19:54:27 ERROR 	at sbt.Command$.$anonfun$applyEffect$2(Command.scala:146)
+2024.01.22 19:54:27 ERROR 	at sbt.Command$.process(Command.scala:190)
+2024.01.22 19:54:27 ERROR 	at sbt.MainLoop$.$anonfun$processCommand$5(MainLoop.scala:246)
+2024.01.22 19:54:27 ERROR 	at scala.Option.getOrElse(Option.scala:189)
+2024.01.22 19:54:27 ERROR 	at sbt.MainLoop$.process$1(MainLoop.scala:246)
+2024.01.22 19:54:27 ERROR 	at sbt.MainLoop$.processCommand(MainLoop.scala:279)
+2024.01.22 19:54:27 ERROR 	at sbt.MainLoop$.$anonfun$next$5(MainLoop.scala:164)
+2024.01.22 19:54:27 ERROR 	at sbt.State$StateOpsImpl$.runCmd$1(State.scala:290)
+2024.01.22 19:54:27 ERROR 	at sbt.State$StateOpsImpl$.process$extension(State.scala:326)
+2024.01.22 19:54:27 ERROR 	at sbt.MainLoop$.$anonfun$next$4(MainLoop.scala:164)
+2024.01.22 19:54:27 ERROR 	at sbt.internal.util.ErrorHandling$.wideConvert(ErrorHandling.scala:24)
+2024.01.22 19:54:27 INFO  [error] Overlapping output directories:/Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/modules/foundations/target:
+2024.01.22 19:54:27 ERROR 	at sbt.MainLoop$.next(MainLoop.scala:164)
+2024.01.22 19:54:27 INFO  [error] 	ProjectRef(file:/Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/,foundations)
+2024.01.22 19:54:27 ERROR 	at sbt.MainLoop$.run(MainLoop.scala:145)
+2024.01.22 19:54:27 INFO  [error] 	ProjectRef(file:/Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/,server)
+2024.01.22 19:54:27 ERROR 	at sbt.MainLoop$.$anonfun$runWithNewLog$1(MainLoop.scala:120)
+2024.01.22 19:54:27 INFO  [error] Use 'last' for the full log.
+2024.01.22 19:54:27 ERROR 	at sbt.io.Using.apply(Using.scala:28)
+2024.01.22 19:54:27 ERROR 	at sbt.MainLoop$.runWithNewLog(MainLoop.scala:113)
+2024.01.22 19:54:27 ERROR 	at sbt.MainLoop$.runAndClearLast(MainLoop.scala:67)
+2024.01.22 19:54:27 ERROR 	at sbt.MainLoop$.runLoggedLoop(MainLoop.scala:52)
+2024.01.22 19:54:27 ERROR 	at sbt.MainLoop$.runLogged(MainLoop.scala:43)
+2024.01.22 19:54:27 ERROR 	at sbt.StandardMain$.runManaged(Main.scala:225)
+2024.01.22 19:54:27 ERROR 	at sbt.xMain$.$anonfun$run$11(Main.scala:135)
+2024.01.22 19:54:27 ERROR 	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+2024.01.22 19:54:27 ERROR 	at scala.Console$.withIn(Console.scala:230)
+2024.01.22 19:54:27 ERROR 	at sbt.internal.util.Terminal$.withIn(Terminal.scala:610)
+2024.01.22 19:54:27 ERROR 	at sbt.internal.util.Terminal$.$anonfun$withStreams$1(Terminal.scala:390)
+2024.01.22 19:54:27 ERROR 	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+2024.01.22 19:54:27 ERROR 	at scala.Console$.withOut(Console.scala:167)
+2024.01.22 19:54:27 ERROR 	at sbt.internal.util.Terminal$.$anonfun$withOut$2(Terminal.scala:600)
+2024.01.22 19:54:27 ERROR 	at scala.util.DynamicVariable.withValue(DynamicVariable.scala:62)
+2024.01.22 19:54:27 ERROR 	at scala.Console$.withErr(Console.scala:196)
+2024.01.22 19:54:27 ERROR 	at sbt.internal.util.Terminal$.withOut(Terminal.scala:600)
+2024.01.22 19:54:27 ERROR 	at sbt.internal.util.Terminal$.withStreams(Terminal.scala:390)
+2024.01.22 19:54:27 ERROR 	at sbt.xMain$.withStreams$1(Main.scala:88)
+2024.01.22 19:54:27 INFO  [warn] Project loading failed: (r)etry, (q)uit, (l)ast, or (i)gnore? (default: r)
+2024.01.22 19:54:27 ERROR 	at sbt.xMain$.run(Main.scala:123)
+2024.01.22 19:54:27 ERROR 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+2024.01.22 19:54:27 ERROR 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+2024.01.22 19:54:27 ERROR 	at sbt.internal.XMainConfiguration.run(XMainConfiguration.java:59)
+2024.01.22 19:54:27 ERROR 	at sbt.xMain.run(Main.scala:47)
+2024.01.22 19:54:27 ERROR 	at xsbt.boot.Launch$.$anonfun$run$1(Launch.scala:149)
+2024.01.22 19:54:27 ERROR 	at xsbt.boot.Launch$.withContextLoader(Launch.scala:176)
+2024.01.22 19:54:27 ERROR 	at xsbt.boot.Launch$.run(Launch.scala:149)
+2024.01.22 19:54:27 ERROR 	at xsbt.boot.Launch$.$anonfun$apply$1(Launch.scala:44)
+2024.01.22 19:54:27 ERROR 	at xsbt.boot.Launch$.launch(Launch.scala:159)
+2024.01.22 19:54:27 ERROR 	at xsbt.boot.Launch$.apply(Launch.scala:44)
+2024.01.22 19:54:27 ERROR 	at xsbt.boot.Launch$.apply(Launch.scala:21)
+2024.01.22 19:54:27 ERROR 	at xsbt.boot.Boot$.runImpl(Boot.scala:78)
+2024.01.22 19:54:27 ERROR 	at xsbt.boot.Boot$.run(Boot.scala:73)
+2024.01.22 19:54:27 ERROR 	at xsbt.boot.Boot$.main(Boot.scala:21)
+2024.01.22 19:54:27 ERROR 	at xsbt.boot.Boot.main(Boot.scala)
+2024.01.22 19:54:27 INFO  time: ran 'sbt bloopInstall' in 8.64s
+2024.01.22 19:54:27 ERROR sbt command failed: /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /var/folders/tn/g0d9_k411m91_tny1pr673nr0000gn/T/metals17162990748779326792/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall
+2024.01.22 19:54:27 INFO  Disconnecting from Bloop session...
+2024.01.22 19:54:27 INFO  Shut down connection with build server.
+2024.01.22 19:54:27 INFO  Shut down connection with build server.
+2024.01.22 19:54:27 INFO  Shut down connection with build server.
+2024.01.22 19:54:27 INFO  Attempting to connect to the build server...
+2024.01.22 19:54:27 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.22 19:54:27 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.22 19:54:27 INFO  Attempting to connect to the build server...
+2024.01.22 19:54:27 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.22 19:54:27 INFO  Attempting to connect to the build server...
+2024.01.22 19:54:27 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.22 19:54:27 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/project/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.22 19:54:27 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.22 19:54:27 INFO  time: Connected to build server in 46ms
+2024.01.22 19:54:27 INFO  Connected to Build server: Bloop v1.5.13
+2024.01.22 19:54:30 INFO  time: indexed workspace in 2.18s
+2024.01.22 19:54:32 INFO  time: code lens generation in 2.07s
+Jan 22, 2024 7:54:39 P.M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 128
+2024.01.22 19:54:43 INFO  running '/Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home/bin/java -Djline.terminal=jline.UnsupportedTerminal -Dsbt.log.noformat=true -Dfile.encoding=UTF-8 -jar /var/folders/tn/g0d9_k411m91_tny1pr673nr0000gn/T/metals6135485823843269886/sbt-launch.jar -Dbloop.export-jar-classifiers=sources bloopInstall'
+2024.01.22 19:54:44 INFO  [info] welcome to sbt 1.9.8 (Oracle Corporation Java 21.0.2)
+2024.01.22 19:54:44 INFO  [info] loading global plugins from /Users/abadmin/.sbt/1.0/plugins
+2024.01.22 19:54:46 INFO  [info] loading settings for project zio-rite-of-passage-build-build-build from metals.sbt ...
+2024.01.22 19:54:46 INFO  [info] loading project definition from /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/project/project
+2024.01.22 19:54:46 INFO  [info] loading settings for project zio-rite-of-passage-build-build from metals.sbt ...
+2024.01.22 19:54:46 INFO  [info] loading project definition from /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/project
+2024.01.22 19:54:48 INFO  [success] Generated .bloop/zio-rite-of-passage-build-build.json
+2024.01.22 19:54:48 INFO  [success] Total time: 1 s, completed Jan 22, 2024, 7:54:48 p.m.
+2024.01.22 19:54:48 INFO  [info] loading settings for project zio-rite-of-passage-build from metals.sbt,plugins.sbt ...
+2024.01.22 19:54:48 INFO  [info] loading project definition from /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project
+2024.01.22 19:54:48 INFO  [success] Generated .bloop/zio-rite-of-passage-build.json
+2024.01.22 19:54:48 INFO  [success] Total time: 1 s, completed Jan 22, 2024, 7:54:49 p.m.
+2024.01.22 19:54:51 INFO  [info] loading settings for project root from build.sbt ...
+2024.01.22 19:54:51 INFO  [info] set current project to zio-rite-of-passage (in build file:/Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/)
+2024.01.22 19:54:51 INFO  [warn] .env file not found (fileName=.env), no .env environment configured.
+2024.01.22 19:54:53 INFO  [success] Generated .bloop/foundations-test.json
+2024.01.22 19:54:53 INFO  [success] Generated .bloop/foundations.json
+2024.01.22 19:54:53 INFO  [success] Generated .bloop/server-test.json
+2024.01.22 19:54:53 INFO  [success] Generated .bloop/server.json
+2024.01.22 19:54:55 INFO  [success] Generated .bloop/root-test.json
+2024.01.22 19:54:55 INFO  [success] Generated .bloop/root.json
+2024.01.22 19:54:55 INFO  [success] Total time: 3 s, completed Jan 22, 2024, 7:54:55 p.m.
+2024.01.22 19:54:55 INFO  time: ran 'sbt bloopInstall' in 11s
+2024.01.22 19:54:55 INFO  Disconnecting from Bloop session...
+2024.01.22 19:54:55 INFO  Shut down connection with build server.
+2024.01.22 19:54:55 INFO  Shut down connection with build server.
+2024.01.22 19:54:55 INFO  Shut down connection with build server.
+2024.01.22 19:54:55 INFO  Attempting to connect to the build server...
+2024.01.22 19:54:55 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.22 19:54:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.22 19:54:55 INFO  Attempting to connect to the build server...
+2024.01.22 19:54:55 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.22 19:54:55 INFO  Attempting to connect to the build server...
+2024.01.22 19:54:55 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.22 19:54:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/project/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.22 19:54:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.22 19:54:55 INFO  time: Connected to build server in 43ms
+2024.01.22 19:54:55 INFO  Connected to Build server: Bloop v1.5.13
+2024.01.22 19:54:57 INFO  time: indexed workspace in 1.97s
+2024.01.22 19:54:58 INFO  time: code lens generation in 1.07s
+2024.01.22 19:57:10 INFO  compiling server (1 scala source)
+2024.01.22 19:57:10 INFO  time: compiled server in 0.25s
+2024.01.22 19:58:41 INFO  compiling server (1 scala source)
+2024.01.22 19:58:41 INFO  time: compiled server in 0.59s
+2024.01.22 19:59:01 INFO  compiling server (1 scala source)
+2024.01.22 19:59:01 INFO  time: compiled server in 0.45s
+2024.01.22 20:00:11 INFO  compiling server (1 scala source)
+2024.01.22 20:00:11 INFO  time: compiled server in 0.42s
+2024.01.22 20:03:23 INFO  compiling foundations (5 scala sources)
+2024.01.22 20:03:26 INFO  time: compiled foundations in 3.63s
+2024.01.22 20:05:47 INFO  compiling server (1 scala source)
+2024.01.22 20:05:47 INFO  time: compiled server in 0.41s
+2024.01.22 20:08:13 INFO  compiling server (1 scala source)
+2024.01.22 20:08:13 INFO  time: compiled server in 0.47s
+2024.01.22 20:13:37 INFO  compiling server (1 scala source)
+2024.01.22 20:13:37 INFO  time: compiled server in 0.12s
+2024.01.22 20:14:18 INFO  compiling server (1 scala source)
+2024.01.22 20:14:18 INFO  time: compiled server in 47ms
+2024.01.22 20:14:46 INFO  compiling server (1 scala source)
+2024.01.22 20:14:46 INFO  time: compiled server in 0.23s
+2024.01.22 20:15:17 INFO  compiling server (1 scala source)
+2024.01.22 20:15:17 INFO  time: compiled server in 0.12s
+2024.01.22 20:16:53 INFO  compiling server (1 scala source)
+2024.01.22 20:16:53 INFO  time: compiled server in 53ms
+Jan 22, 2024 8:18:05 P.M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 1490
+2024.01.22 20:18:08 INFO  compiling server (1 scala source)
+2024.01.22 20:18:08 INFO  time: compiled server in 40ms
+2024.01.22 20:18:08 INFO  compiling server (1 scala source)
+2024.01.22 20:18:08 INFO  time: compiled server in 86ms
+2024.01.22 20:18:35 INFO  compiling server (1 scala source)
+2024.01.22 20:18:35 INFO  time: compiled server in 0.27s
+2024.01.22 20:20:00 INFO  compiling server (1 scala source)
+2024.01.22 20:20:00 INFO  time: compiled server in 0.28s
+2024.01.22 20:22:46 INFO  compiling server (1 scala source)
+2024.01.22 20:22:46 INFO  time: compiled server in 71ms
+2024.01.22 20:23:15 INFO  compiling server (1 scala source)
+2024.01.22 20:23:15 INFO  time: compiled server in 0.79s
+***** missing reference, looking for GeneratedMessageCompanion/T in package scalapb
+decls = Scope{}
+***** missing reference, looking for GeneratedMessage/T in package scalapb
+decls = Scope{}
+***** missing reference, looking for Updatable/T in package scalapb.lenses
+decls = Scope{}
+***** missing reference, looking for GeneratedEnumCompanion/T in package scalapb
+decls = Scope{
+  final lazy module object lenses: scalapb.lenses
+  final module object lenses extends  {this: scalapb.lenses.type =>} at
+    (scalapb : scalapb.type)
+}
+***** missing reference, looking for GeneratedEnum/T in package scalapb
+decls = Scope{
+  final lazy module object lenses: scalapb.lenses
+  final module object lenses extends  {this: scalapb.lenses.type =>} at
+    (scalapb : scalapb.type)
+}
+2024.01.22 20:23:35 INFO  compiling server (1 scala source)
+2024.01.22 20:23:35 INFO  time: compiled server in 0.56s
+2024.01.22 20:24:18 INFO  compiling server (1 scala source)
+2024.01.22 20:24:18 INFO  time: compiled server in 0.38s
+2024.01.22 20:24:39 INFO  compiling server (1 scala source)
+2024.01.22 20:24:39 INFO  time: compiled server in 0.37s
+2024.01.22 22:23:33 INFO  Shutting down server
+2024.01.22 22:23:33 INFO  shutting down Metals
+2024.01.22 22:23:33 INFO  Shut down connection with build server.
+2024.01.22 22:23:33 INFO  Shut down connection with build server.
+2024.01.22 22:23:33 INFO  Shut down connection with build server.
+2024.01.22 22:23:33 INFO  Exiting server
+2024.01.25 19:15:16 INFO  Started: Metals version 1.2.0 in folders '/Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage' for client Visual Studio Code 1.85.2.
+2024.01.25 19:15:17 INFO  Attempting to connect to the build server...
+2024.01.25 19:15:17 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.25 19:15:17 INFO  skipping build import with status 'Installed'
+2024.01.25 19:15:21 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.25 19:15:21 INFO  Attempting to connect to the build server...
+2024.01.25 19:15:21 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.25 19:15:21 INFO  Attempting to connect to the build server...
+2024.01.25 19:15:21 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.25 19:15:21 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/project/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.25 19:15:21 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.25 19:15:21 INFO  time: Connected to build server in 4.43s
+2024.01.25 19:15:21 INFO  Connected to Build server: Bloop v1.5.13
+2024.01.25 19:15:21 INFO  time: Imported build in 0.39s
+2024.01.25 19:15:22 INFO  no build target found for /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/modules/server/src/main/scala/com/rockthejvm/reviewboard/Application.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.01.25 19:15:25 INFO  time: indexed workspace in 2.94s
+2024.01.25 19:15:47 INFO  compiling foundations (5 scala sources)
+2024.01.25 19:15:58 INFO  time: compiled foundations in 10s
+2024.01.25 19:44:22 INFO  compiling server (1 scala source)
+2024.01.25 19:44:22 INFO  time: compiled server in 0.24s
+Jan. 25, 2024 7:44:27 P.M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 28
+Jan. 25, 2024 7:47:12 P.M. scala.meta.internal.pc.CompilerSearchVisitor visitClassfile
+WARNING: Toplevel definition Eval is defined in
+  /Users/abadmin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.11/scala-compiler-2.13.11.jar(scala/tools/reflect/package.class)
+and also in
+  /Users/abadmin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.11/scala-compiler-2.13.11.jar(scala/tools/reflect/Eval.class)
+One of these files should be removed from the classpath.
+dotty.tools.dotc.core.TypeError$$anon$1: Toplevel definition Eval is defined in
+  /Users/abadmin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.11/scala-compiler-2.13.11.jar(scala/tools/reflect/package.class)
+and also in
+  /Users/abadmin/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-compiler/2.13.11/scala-compiler-2.13.11.jar(scala/tools/reflect/Eval.class)
+One of these files should be removed from the classpath.
+
+Jan. 25, 2024 7:48:32 P.M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 956
+Jan. 25, 2024 7:48:49 P.M. scala.meta.internal.pc.CompilerAccess handleError
+SEVERE: A severe compiler error occurred, full details of the error can be found in the error report /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/.metals/.reports/metals-full/2024-01-25/r_compiler-error_(server)_19-48-49-734.md
+2024.01.25 19:49:26 INFO  compiling server (1 scala source)
+2024.01.25 19:49:26 INFO  time: compiled server in 96ms
+2024.01.25 19:50:00 WARN  Using indexes to guess the definition of JsonCodec
+2024.01.25 19:50:02 INFO  time: code lens generation in 1.82s
+2024.01.25 19:50:37 INFO  compiling server (1 scala source)
+2024.01.25 19:50:37 INFO  time: compiled server in 66ms
+2024.01.25 19:51:05 INFO  compiling server (1 scala source)
+2024.01.25 19:51:05 INFO  time: compiled server in 0.71s
+2024.01.25 19:51:19 INFO  compiling server (1 scala source)
+2024.01.25 19:51:19 INFO  time: compiled server in 90ms
+2024.01.25 19:51:45 INFO  compiling server (1 scala source)
+2024.01.25 19:51:45 INFO  time: compiled server in 0.59s
+2024.01.25 19:52:28 INFO  compiling server (1 scala source)
+2024.01.25 19:52:28 INFO  time: compiled server in 0.1s
+2024.01.25 19:52:49 INFO  compiling server (1 scala source)
+2024.01.25 19:52:49 INFO  time: compiled server in 43ms
+2024.01.25 19:53:08 INFO  compiling server (1 scala source)
+2024.01.25 19:53:08 INFO  time: compiled server in 40ms
+2024.01.25 19:55:47 INFO  compiling server (1 scala source)
+2024.01.25 19:55:47 INFO  time: compiled server in 0.38s
+2024.01.25 19:57:09 INFO  compiling server (1 scala source)
+2024.01.25 19:57:09 INFO  time: compiled server in 98ms
+2024.01.25 19:58:13 INFO  compiling server (2 scala sources)
+Jan. 25, 2024 7:58:13 P.M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 2078
+2024.01.25 19:58:13 INFO  time: compiled server in 0.13s
+2024.01.25 19:58:13 INFO  compiling server (2 scala sources)
+2024.01.25 19:58:13 INFO  time: compiled server in 0.11s
+2024.01.25 20:08:07 WARN  Using indexes to guess the definition of CreateCompanyRequest
+2024.01.25 20:08:08 WARN  Using indexes to guess the definition of CreateCompanyRequest
+2024.01.25 20:08:11 WARN  Using indexes to guess the definition of Company
+2024.01.25 20:08:13 WARN  Using indexes to guess the definition of Company
+2024.01.25 20:08:15 INFO  compiling server (2 scala sources)
+2024.01.25 20:08:15 INFO  time: compiled server in 0.14s
+2024.01.25 20:08:27 INFO  compiling server (2 scala sources)
+2024.01.25 20:08:27 INFO  time: compiled server in 0.13s
+2024.01.25 20:08:34 INFO  compiling server (2 scala sources)
+2024.01.25 20:08:34 INFO  time: compiled server in 0.11s
+2024.01.25 20:08:44 INFO  compiling server (2 scala sources)
+2024.01.25 20:08:44 INFO  time: compiled server in 0.13s
+2024.01.25 20:08:52 INFO  compiling server (2 scala sources)
+2024.01.25 20:08:52 INFO  time: compiled server in 99ms
+2024.01.25 20:09:01 INFO  compiling server (2 scala sources)
+2024.01.25 20:09:01 INFO  time: compiled server in 0.1s
+2024.01.25 20:10:19 INFO  compiling server (2 scala sources)
+2024.01.25 20:10:19 INFO  time: compiled server in 98ms
+2024.01.25 20:11:06 INFO  compiling server (2 scala sources)
+2024.01.25 20:11:06 INFO  time: compiled server in 0.44s
+2024.01.25 20:11:12 INFO  compiling server (2 scala sources)
+2024.01.25 20:11:12 INFO  time: compiled server in 0.36s
+2024.01.25 20:12:23 INFO  compiling server (2 scala sources)
+2024.01.25 20:12:23 INFO  time: compiled server in 0.43s
+2024.01.25 20:12:48 INFO  compiling server (2 scala sources)
+2024.01.25 20:12:48 INFO  time: compiled server in 0.38s
+2024.01.25 20:13:20 INFO  compiling server (3 scala sources)
+2024.01.25 20:13:20 INFO  time: compiled server in 0.41s
+2024.01.25 20:13:29 INFO  compiling server (3 scala sources)
+2024.01.25 20:13:30 INFO  time: compiled server in 1.11s
+2024.01.25 20:16:17 INFO  compiling server (1 scala source)
+2024.01.25 20:16:17 INFO  time: compiled server in 0.77s
+2024.01.25 20:17:41 ERROR Failed to tokenize input for semantic tokens for /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/modules/server/src/main/scala/com/rockthejvm/reviewboard/http/endpoints/CompanyEndpoints.scala
+scala.meta.tokenizers.TokenizeException: <input>:32: error: unclosed string literal
+  .description("Get company by Idf)
+               ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringLit(LegacyScanner.scala:553)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:372)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:376)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.01.25 20:18:59 INFO  compiling server (1 scala source)
+2024.01.25 20:18:59 INFO  time: compiled server in 0.16s
+2024.01.25 20:19:02 ERROR Failed to tokenize input for semantic tokens for /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/modules/server/src/main/scala/com/rockthejvm/reviewboard/http/endpoints/CompanyEndpoints.scala
+scala.meta.tokenizers.TokenizeException: <input>:30: error: unclosed string literal
+  .tag("companies)
+       ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringLit(LegacyScanner.scala:553)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:372)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:376)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.01.25 20:19:04 ERROR Failed to tokenize input for semantic tokens for /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/modules/server/src/main/scala/com/rockthejvm/reviewboard/http/endpoints/CompanyEndpoints.scala
+scala.meta.tokenizers.TokenizeException: <input>:30: error: unclosed string literal
+  .tag("companies"")
+                  ^
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:23)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter.syntaxError$(Reporter.scala:25)
+	at scala.meta.internal.tokenizers.Reporter$$anon$1.syntaxError(Reporter.scala:33)
+	at scala.meta.internal.tokenizers.LegacyScanner.getStringLit(LegacyScanner.scala:553)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchDoubleQuote$1(LegacyScanner.scala:372)
+	at scala.meta.internal.tokenizers.LegacyScanner.fetchToken(LegacyScanner.scala:376)
+	at scala.meta.internal.tokenizers.LegacyScanner.nextToken(LegacyScanner.scala:211)
+	at scala.meta.internal.tokenizers.LegacyScanner.foreach(LegacyScanner.scala:1011)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.uncachedTokenize(ScalametaTokenizer.scala:24)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.$anonfun$tokenize$1(ScalametaTokenizer.scala:17)
+	at scala.collection.concurrent.TrieMap.getOrElseUpdate(TrieMap.scala:962)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer.tokenize(ScalametaTokenizer.scala:17)
+	at scala.meta.internal.tokenizers.ScalametaTokenizer$$anon$2.apply(ScalametaTokenizer.scala:332)
+	at scala.meta.tokenizers.Api$XtensionTokenizeDialectInput.tokenize(Api.scala:25)
+	at scala.meta.tokenizers.Api$XtensionTokenizeInputLike.tokenize(Api.scala:14)
+	at scala.meta.internal.metals.SemanticTokensProvider$.getTokens(SemanticTokensProvider.scala:28)
+	at scala.meta.internal.metals.SemanticTokensProvider$.provide(SemanticTokensProvider.scala:89)
+	at scala.meta.internal.metals.Compilers.$anonfun$semanticTokens$3(Compilers.scala:541)
+	at scala.concurrent.impl.Promise$Transformation.run(Promise.scala:467)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.lang.Thread.run(Thread.java:840)
+
+2024.01.25 20:19:08 INFO  compiling server (1 scala source)
+2024.01.25 20:19:08 INFO  time: compiled server in 0.83s
+2024.01.25 20:21:57 INFO  compiling server (1 scala source)
+2024.01.25 20:21:57 INFO  time: compiled server in 0.11s
+2024.01.25 20:23:11 INFO  compiling server (1 scala source)
+2024.01.25 20:23:11 INFO  time: compiled server in 39ms
+2024.01.25 20:23:51 INFO  compiling server (1 scala source)
+2024.01.25 20:23:51 INFO  time: compiled server in 43ms
+2024.01.25 20:24:03 WARN  Using indexes to guess the definition of Company
+2024.01.25 20:24:03 INFO  compiling server (1 scala source)
+2024.01.25 20:24:03 INFO  time: compiled server in 39ms
+2024.01.25 20:24:07 INFO  Shutting down server
+2024.01.25 20:24:07 INFO  shutting down Metals
+2024.01.25 20:24:07 INFO  Shut down connection with build server.
+2024.01.25 20:24:07 INFO  Shut down connection with build server.
+2024.01.25 20:24:07 INFO  Shut down connection with build server.
+2024.01.25 20:24:07 INFO  Exiting server
+2024.01.26 19:59:50 INFO  Started: Metals version 1.2.0 in folders '/Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage' for client Visual Studio Code 1.85.2.
+2024.01.26 19:59:51 INFO  Attempting to connect to the build server...
+2024.01.26 19:59:51 INFO  skipping build import with status 'Installed'
+2024.01.26 19:59:51 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.26 19:59:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.26 19:59:55 INFO  Attempting to connect to the build server...
+2024.01.26 19:59:55 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.26 19:59:55 INFO  Attempting to connect to the build server...
+2024.01.26 19:59:55 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.26 19:59:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/project/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.26 19:59:55 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.26 19:59:55 INFO  time: Connected to build server in 3.59s
+2024.01.26 19:59:55 INFO  Connected to Build server: Bloop v1.5.13
+2024.01.26 19:59:55 INFO  no build target found for /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/modules/server/src/main/scala/com/rockthejvm/reviewboard/http/controllers/CompanyController.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.01.26 19:59:55 INFO  time: Imported build in 0.32s
+2024.01.26 19:59:59 INFO  time: indexed workspace in 3.25s
+2024.01.26 20:00:02 INFO  compiling server (2 scala sources)
+2024.01.26 20:00:05 INFO  time: compiled server in 3.74s
+2024.01.26 20:00:05 INFO  compiling server (2 scala sources)
+2024.01.26 20:00:07 INFO  time: compiled server in 1.39s
+2024.01.26 20:00:14 INFO  Shutting down server
+2024.01.26 20:00:14 INFO  shutting down Metals
+2024.01.26 20:00:14 INFO  Shut down connection with build server.
+2024.01.26 20:00:14 INFO  Shut down connection with build server.
+2024.01.26 20:00:14 INFO  Shut down connection with build server.
+2024.01.26 20:00:14 INFO  Exiting server
+2024.01.28 16:07:45 INFO  Started: Metals version 1.2.0 in folders '/Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage' for client Visual Studio Code 1.85.2.
+2024.01.28 16:07:46 INFO  Attempting to connect to the build server...
+2024.01.28 16:07:46 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.28 16:07:46 INFO  skipping build import with status 'Installed'
+2024.01.28 16:07:47 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.28 16:07:47 INFO  Attempting to connect to the build server...
+2024.01.28 16:07:47 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.28 16:07:47 INFO  Attempting to connect to the build server...
+2024.01.28 16:07:47 INFO  Bloop uses /Users/abadmin/Library/Java/JavaVirtualMachines/openjdk-21.0.2/Contents/Home defined at /Users/abadmin/.bloop/bloop.json
+2024.01.28 16:07:47 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.28 16:07:47 INFO  tracing is disabled for protocol BSP, to enable tracing of incoming and outgoing JSON messages create an empty file at /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/project/project/.metals/bsp.trace.json or /Users/abadmin/Library/Caches/org.scalameta.metals/bsp.trace.json
+2024.01.28 16:07:47 INFO  time: Connected to build server in 0.49s
+2024.01.28 16:07:47 INFO  Connected to Build server: Bloop v1.5.13
+2024.01.28 16:07:51 INFO  no build target found for /Users/abadmin/workspaces/workspace.scala/rockthejvm/zio-rite-of-passage/modules/server/src/main/scala/com/rockthejvm/reviewboard/http/controllers/CompanyController.scala. Using presentation compiler with project's scala-library version: 3.3.1
+2024.01.28 16:07:54 INFO  time: indexed workspace in 2.87s
+2024.01.28 16:07:56 INFO  compiling server (11 scala sources)
+2024.01.28 16:08:05 INFO  compiling server-test (2 scala sources)
+2024.01.28 16:08:05 INFO  time: compiled server in 9.44s
+2024.01.28 16:08:05 INFO  time: compiled server-test in 0.85s
+Jan. 28, 2024 4:11:19 P.M. org.eclipse.lsp4j.jsonrpc.RemoteEndpoint handleCancellation
+WARNING: Unmatched cancel notification for request id 36
