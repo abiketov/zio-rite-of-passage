@@ -2,6 +2,7 @@ CREATE DATABASE reviewboard;
 
 \c reviewboard;
 
+
 CREATE TABLE IF NOT EXISTS companies (
     id BIGSERIAL PRIMARY KEY,
     slug TEXT UNIQUE NOT NULL,
@@ -11,6 +12,6 @@ CREATE TABLE IF NOT EXISTS companies (
     country TEXT,
     industry TEXT,
     image TEXT,
-    tags TEXT
+    tags TEXT[]
 
 );
