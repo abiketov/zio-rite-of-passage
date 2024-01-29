@@ -1,12 +1,14 @@
 package com.rockthejvm.reviewboard
 
 import com.rockthejvm.reviewboard.http.HttpApi
-import zio.*
+import com.rockthejvm.reviewboard.repositories.*
+import com.rockthejvm.reviewboard.services.*
+import io.getquill.*
+import io.getquill.jdbczio.Quill
 import sttp.tapir.*
-import zio.http.Server
 import sttp.tapir.server.ziohttp.*
-import com.rockthejvm.reviewboard.http.controllers.*
-import com.rockthejvm.reviewboard.services.CompanyService
+import zio.*
+import zio.http.Server
 
 object Application extends ZIOAppDefault {
 
@@ -20,7 +22,9 @@ object Application extends ZIOAppDefault {
   } yield ()
   override def run = serverProgram.provide(
     Server.default,
-    CompanyService.dummyLayer
+    CompanyServiceLive.layer,
+    CompanyRepositoryLive.layer,
+    Repository.dataLayer
   )
 
 }
