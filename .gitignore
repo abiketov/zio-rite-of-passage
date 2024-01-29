@@ -144,6 +144,7 @@ project/plugins/project/
 .cache
 .lib/
 .bsp
+.bloop/
 modules/target/
 project/target/
 project/project/*/
