@@ -20,6 +20,10 @@ object ZIORecap extends ZIOAppDefault {
     _ <- Console.printLine(s)
   } yield ()
 
+  val catchSelective = anAttempt.catchSome {
+    case e: RuntimeException => ZIO.succeed((s"Ignoring runtime exception: $e"))
+    case _ => ZIO.succeed("Ignoring everything else")
+  }
 
   val delayedValue = ZIO.sleep(1.second) *> Random.nextIntBetween(0, 100)
 
