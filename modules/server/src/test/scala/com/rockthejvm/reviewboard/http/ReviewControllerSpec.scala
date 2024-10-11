@@ -1,9 +1,10 @@
 package com.rockthejvm.reviewboard.http
 
-import com.rockthejvm.reviewboard.domain.data.Review
+import com.rockthejvm.reviewboard.domain.data.{Review, User, UserId, UserToken}
 import com.rockthejvm.reviewboard.http.controllers.ReviewController
 import com.rockthejvm.reviewboard.http.requests.CreateReviewRequest
-import com.rockthejvm.reviewboard.services.ReviewService
+import com.rockthejvm.reviewboard.services.{JWTService, ReviewService}
+import com.rockthejvm.reviewboard.syntax.*
 import sttp.client3.*
 import sttp.client3.testing.SttpBackendStub
 import sttp.monad.MonadError
@@ -13,13 +14,18 @@ import sttp.tapir.ztapir.RIOMonadError
 import zio.*
 import zio.json.*
 import zio.test.*
-import com.rockthejvm.reviewboard.syntax.*
 
 import java.time.Instant
 
 object ReviewControllerSpec extends ZIOSpecDefault {
 
   private given zioME: MonadError[Task] = new RIOMonadError[Any]
+
+  val daniel = User(
+    1L,
+    "daniel@rockthejvm.com",
+    "1000:C5714C45AC5794A4481F94BB2D6FF76C4605F0FFFC09A07D:823075578976B713EAC4F4BF35ADE8B462DA1B77B7A5550C"
+  )
 
   private val goodReview = Review(
     id = 1L,
@@ -58,6 +64,16 @@ object ReviewControllerSpec extends ZIOSpecDefault {
       }
   }
 
+  val stubJwtLayer = ZLayer.succeed {
+    new JWTService {
+      override def createToken(user: User): Task[UserToken] =
+        ZIO.succeed(UserToken(user.email, "SECRET", 10000))
+
+      override def verifyToken(token: String): Task[UserId] =
+        ZIO.succeed(UserId(daniel.id, daniel.email))
+    }
+  }
+
   private def backendSubZIO(endpointFun: ReviewController => ServerEndpoint[Any, Task]) =
     for {
       // create the controller
@@ -88,6 +104,7 @@ object ReviewControllerSpec extends ZIOSpecDefault {
                 review = "all good"
               ).toJson
             )
+            .header("Authorization", "Bearer ytdyetyue")
             .send(backendStb)
         } yield response.body
 
@@ -137,6 +154,6 @@ object ReviewControllerSpec extends ZIOSpecDefault {
           )
         }
       }
-    ).provide(ZLayer.succeed(serviceStub))
+    ).provide(ZLayer.succeed(serviceStub), stubJwtLayer)
 
 }

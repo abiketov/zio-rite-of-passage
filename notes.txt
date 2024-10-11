@@ -1,0 +1,4 @@
+connect to postgres
+docker exec -it zio-rite-of-passage-db-1 bash
+psql -U docker
+\c reviewboard;

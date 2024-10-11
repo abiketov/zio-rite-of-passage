@@ -14,4 +14,6 @@ trait BaseEndPoint {
       /* MyHttpError => (StatusCode, String) */
       HttpError.encode
     )
+
+  val secureBaseEndpoint = baseEndPoint.securityIn(auth.bearer[String]())
 }

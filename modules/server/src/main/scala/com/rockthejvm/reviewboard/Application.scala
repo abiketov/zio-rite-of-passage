@@ -1,5 +1,6 @@
 package com.rockthejvm.reviewboard
 
+import com.rockthejvm.reviewboard.config.{Configs, JWTConfig}
 import com.rockthejvm.reviewboard.http.HttpApi
 import com.rockthejvm.reviewboard.repositories.*
 import com.rockthejvm.reviewboard.services.*
@@ -22,11 +23,18 @@ object Application extends ZIOAppDefault {
   } yield ()
   override def run = serverProgram.provide(
     Server.default,
+    // services
     CompanyServiceLive.layer,
     ReviewServiceLive.layer,
+    UserServiceLive.layer,
+    JWTServiceLive.configuredLayer,
+    EmailServiceLive.configuredLayer,
+    // repositories
     ReviewRepositoryLive.layer,
     CompanyRepositoryLive.layer,
-    Repository.dataLayer,
+    UserRepositoryLive.layer,
+    RecoveryTokensRepositoryLive.configuredLayer,
+    Repository.dataLayer
   )
 
 }

@@ -1,20 +1,22 @@
 package com.rockthejvm.reviewboard.http.controllers
 
 import com.rockthejvm.reviewboard.domain.Company
+import com.rockthejvm.reviewboard.domain.data.UserId
 import com.rockthejvm.reviewboard.http.endpoints.CompanyEndpoints
 import sttp.tapir.server.ServerEndpoint
 import zio.*
-import com.rockthejvm.reviewboard.services.CompanyService
+import com.rockthejvm.reviewboard.services.{CompanyService, JWTService}
+
 import scala.collection.mutable
 import io.getquill.autoQuote
 
-class CompanyController private (service: CompanyService)
+class CompanyController private (service: CompanyService, jwtService: JWTService)
     extends BaseController
     with CompanyEndpoints {
 
-  val create: ServerEndpoint[Any, Task] = createEndpoint.serverLogic { req =>
-    service.create(req).either
-  }
+  val create: ServerEndpoint[Any, Task] = createEndpoint
+    .serverSecurityLogic[UserId, Task](token => jwtService.verifyToken(token).either)
+    .serverLogic { userId => req => service.create(req).either }
 
   val getAll: ServerEndpoint[Any, Task] =
     getAllEndpoint.serverLogic(_ => service.getAll.either)
@@ -34,6 +36,7 @@ class CompanyController private (service: CompanyService)
 
 object CompanyController {
   val makeZIO = for {
-    service <- ZIO.service[CompanyService]
-  } yield new CompanyController(service)
+    service    <- ZIO.service[CompanyService]
+    jwtService <- ZIO.service[JWTService]
+  } yield new CompanyController(service, jwtService)
 }
