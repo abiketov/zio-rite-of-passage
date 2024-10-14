@@ -1,4 +1,4 @@
-package com.rockthejvm.reviewboard.domain
+package com.rockthejvm.reviewboard.domain.data
 
 import zio.json.JsonCodec
 import zio.json.DeriveJsonCodec

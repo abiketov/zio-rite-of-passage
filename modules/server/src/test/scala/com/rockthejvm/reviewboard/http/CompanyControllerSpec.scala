@@ -1,7 +1,6 @@
 package com.rockthejvm.reviewboard.http
 
-import com.rockthejvm.reviewboard.domain.Company
-import com.rockthejvm.reviewboard.domain.data.{User, UserId, UserToken}
+import com.rockthejvm.reviewboard.domain.data.{Company, User, UserId, UserToken}
 import com.rockthejvm.reviewboard.http.controllers.CompanyController
 import com.rockthejvm.reviewboard.http.requests.CreateCompanyRequest
 import com.rockthejvm.reviewboard.services.{CompanyService, JWTService}

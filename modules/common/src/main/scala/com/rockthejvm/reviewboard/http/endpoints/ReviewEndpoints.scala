@@ -1,9 +1,9 @@
 package com.rockthejvm.reviewboard.http.endpoints
 
+import com.rockthejvm.reviewboard.domain.data.Review
 import sttp.tapir.*
 import sttp.tapir.json.zio.*
 import sttp.tapir.generic.auto.*
-import com.rockthejvm.reviewboard.domain.data.*
 import com.rockthejvm.reviewboard.http.requests.CreateReviewRequest
 
 trait ReviewEndpoints extends BaseEndPoint {

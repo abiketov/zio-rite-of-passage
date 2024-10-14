@@ -1,10 +1,10 @@
 package com.rockthejvm.reviewboard.http.endpoints
 
+import com.rockthejvm.reviewboard.domain.data.Company
 import sttp.tapir.*
 import sttp.tapir.json.zio.*
 import sttp.tapir.generic.auto.*
 import com.rockthejvm.reviewboard.http.requests.CreateCompanyRequest
-import com.rockthejvm.reviewboard.domain.Company
 
 trait CompanyEndpoints extends BaseEndPoint {
 

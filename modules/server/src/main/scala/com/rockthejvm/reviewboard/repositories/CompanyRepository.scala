@@ -1,6 +1,6 @@
 package com.rockthejvm.reviewboard.repositories
 
-import com.rockthejvm.reviewboard.domain.Company
+import com.rockthejvm.reviewboard.domain.data.Company
 import zio.*
 import io.getquill.*
 import io.getquill.jdbczio.Quill

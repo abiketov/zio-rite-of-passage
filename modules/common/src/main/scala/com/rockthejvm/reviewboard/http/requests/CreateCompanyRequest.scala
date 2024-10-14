@@ -1,6 +1,6 @@
 package com.rockthejvm.reviewboard.http.requests
 
-import com.rockthejvm.reviewboard.domain.Company
+import com.rockthejvm.reviewboard.domain.data.Company
 import zio.json.JsonCodec
 import zio.json.DeriveJsonCodec
 

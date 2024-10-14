@@ -1,7 +1,6 @@
 package com.rockthejvm.reviewboard.http.controllers
 
-import com.rockthejvm.reviewboard.domain.Company
-import com.rockthejvm.reviewboard.domain.data.UserId
+import com.rockthejvm.reviewboard.domain.data.{Company, UserId}
 import com.rockthejvm.reviewboard.http.endpoints.CompanyEndpoints
 import sttp.tapir.server.ServerEndpoint
 import zio.*

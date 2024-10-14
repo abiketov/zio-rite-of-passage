@@ -1,6 +1,6 @@
 package com.rockthejvm.reviewboard.services
 
-import com.rockthejvm.reviewboard.domain.Company
+import com.rockthejvm.reviewboard.domain.data.Company
 import com.rockthejvm.reviewboard.http.requests.CreateCompanyRequest
 import zio.*
 import zio.test.*

@@ -7,6 +7,7 @@ import com.rockthejvm.reviewboard.services.*
 import io.getquill.*
 import io.getquill.jdbczio.Quill
 import sttp.tapir.*
+import sttp.tapir.server.interceptor.cors.CORSInterceptor
 import sttp.tapir.server.ziohttp.*
 import zio.*
 import zio.http.Server
@@ -17,7 +18,7 @@ object Application extends ZIOAppDefault {
     endpoints <- HttpApi.endpointsZIO
     server <- Server.serve(
       ZioHttpInterpreter(
-        ZioHttpServerOptions.default
+        ZioHttpServerOptions.default.appendInterceptor(CORSInterceptor.default)
       ).toHttp(endpoints)
     )
   } yield ()
