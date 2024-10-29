@@ -2,7 +2,8 @@ package com.rockthejvm.reviewboard.pages
 
 import com.raquo.laminar.api.L.{*, given}
 import com.rockthejvm.reviewboard.common.Constants
-import com.rockthejvm.reviewboard.components.Anchors
+import com.rockthejvm.reviewboard.components.*
+import com.rockthejvm.reviewboard.core.BackendClient
 import com.rockthejvm.reviewboard.domain.data.Company
 import com.rockthejvm.reviewboard.http.endpoints.CompanyEndpoints
 import sttp.client3.*
@@ -18,33 +19,31 @@ import sttp.tapir.Endpoint
 
 object CompaniesPage {
 
-  val simpleCompany = Company(
-    1L,
-    "simple-company",
-    "Simple company",
-    "http://simple.com",
-    Some("Anywhere"),
-    Some("On Mars"),
-    Some("space travel"),
-    None,
-    List("space", "scala")
-  )
+  // components
+  val filterPanel = new FilterPanel
 
-  val companiesBus = EventBus[List[Company]]()
-
-  /** endpoint.call(payload).emitTo(reactive variable)
-    */
-  def performBackendCall(): Unit = {
-    val companyEndpoints = new CompanyEndpoints {}
-    val allEndpoint      = companyEndpoints.getAllEndpoint
-
-    // run ZIO effect
-    val companiesZIO = useBackend(_.companyEndpoints.getAllEndpoint(()))
-    companiesZIO.emitTo(companiesBus)
+//  val companiesBus = EventBus[List[Company]]()
+//
+//  /** endpoint.call(payload).emitTo(reactive variable)
+//    */
+//  def performBackendCall(): Unit = {
+//    val companyEndpoints = new CompanyEndpoints {}
+//    // val allEndpoint      = companyEndpoints.getAllEndpoint
+//
+//    // run ZIO effect
+//    val companiesZIO = useBackend(_.companyEndpoints.getAllEndpoint(()))
+//    companiesZIO.emitTo(companiesBus)
+//  }
+  val companiesEvents: EventStream[List[Company]] = {
+    useBackend(_.companyEndpoints.getAllEndpoint(())).toEventStream.mergeWith {
+      filterPanel.triggerFilters.flatMap { filter =>
+        useBackend(_.companyEndpoints.searchEndpoint(filter)).toEventStream
+      }
+    }
   }
 
   def apply() = sectionTag(
-    onMountCallback(_ => performBackendCall()),
+    // onMountCallback(_ => performBackendCall()),
     cls := "section-1",
     div(
       cls := "container company-list-hero",
@@ -59,11 +58,11 @@ object CompaniesPage {
         cls := "row jvm-recent-companies-body",
         div(
           cls := "col-lg-4",
-          div("TODO filter panel here")
+          filterPanel.apply()
         ),
         div(
           cls := "col-lg-8",
-          children <-- companiesBus.events.map(_.map(renderCompany))
+          children <-- companiesEvents.map(_.map(renderCompany))
         )
       )
     )

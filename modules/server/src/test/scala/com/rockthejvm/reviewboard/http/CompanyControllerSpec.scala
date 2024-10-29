@@ -1,6 +1,6 @@
 package com.rockthejvm.reviewboard.http
 
-import com.rockthejvm.reviewboard.domain.data.{Company, User, UserId, UserToken}
+import com.rockthejvm.reviewboard.domain.data.{Company, CompanyFilter, User, UserId, UserToken}
 import com.rockthejvm.reviewboard.http.controllers.CompanyController
 import com.rockthejvm.reviewboard.http.requests.CreateCompanyRequest
 import com.rockthejvm.reviewboard.services.{CompanyService, JWTService}
@@ -38,6 +38,12 @@ object CompanyControllerSpec extends ZIOSpecDefault {
 
     override def getBySlug(slug: String): Task[Option[Company]] = ZIO.succeed {
       if (slug == rtjvm.slug) Some(rtjvm) else None
+    }
+
+    override def allFilters: Task[CompanyFilter] = ZIO.succeed(CompanyFilter.empty)
+
+    override def search(filter: CompanyFilter): Task[List[Company]] = ZIO.succeed {
+      List.empty
     }
   }
 

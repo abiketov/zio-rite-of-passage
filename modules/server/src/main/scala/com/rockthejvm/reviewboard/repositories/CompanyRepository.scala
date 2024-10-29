@@ -1,6 +1,6 @@
 package com.rockthejvm.reviewboard.repositories
 
-import com.rockthejvm.reviewboard.domain.data.Company
+import com.rockthejvm.reviewboard.domain.data.{Company, CompanyFilter}
 import zio.*
 import io.getquill.*
 import io.getquill.jdbczio.Quill
@@ -14,6 +14,8 @@ trait CompanyRepository {
   def getById(id: Long): Task[Option[Company]]
   def getBySlug(slug: String): Task[Option[Company]]
   def get: Task[List[Company]]
+  def search(filter: CompanyFilter): Task[List[Company]]
+  def uniqueAttributes: Task[CompanyFilter]
 }
 
 class CompanyRepositoryLive(quill: Quill.Postgres[SnakeCase]) extends CompanyRepository {
@@ -63,6 +65,43 @@ class CompanyRepositoryLive(quill: Quill.Postgres[SnakeCase]) extends CompanyRep
         .delete
         .returning(r => r)
     }
+
+  override def uniqueAttributes: Task[CompanyFilter] = {
+    for {
+      locations <- run(query[Company].map(_.location).distinct).map(list =>
+        list.flatMap(o => o.toList)
+      )
+      countries <- run(query[Company].map(_.country).distinct).map(list =>
+        list.flatMap(o => o.toList)
+      )
+      industries <- run(query[Company].map(_.industry).distinct).map(list =>
+        list.flatMap(o => o.toList)
+      )
+      tags <- run(query[Company].map(_.tags)).map(listOfList => listOfList.flatten.toSet.toList)
+    } yield CompanyFilter(locations, countries, industries, tags)
+  }
+
+  /** select * from companies where location in filter.locations or country in ... or industry in
+    * ... or tags in (select c1.tags from companies c1 where c1.id == company.id)
+    *
+    * @param filter
+    * @return
+    */
+  override def search(filter: CompanyFilter): Task[List[Company]] = {
+    if (filter.isEmpty) this.get
+    else {
+      run {
+        query[Company]
+          .filter { company =>
+            liftQuery(filter.locations.toSet).contains(company.location) ||
+            liftQuery(filter.countries.toSet).contains(company.country) ||
+            liftQuery(filter.industries.toSet).contains(company.industry) ||
+            sql"${company.tags} && ${lift(filter.tags)}".asCondition
+          }
+      }
+    }
+
+  }
 
 }
 

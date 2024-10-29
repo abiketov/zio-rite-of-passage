@@ -1,12 +1,13 @@
 package com.rockthejvm.reviewboard.repositories
 
-import com.rockthejvm.reviewboard.domain.data.Company
+import com.rockthejvm.reviewboard.domain.data.{Company, CompanyFilter}
 import com.rockthejvm.reviewboard.syntax.*
 import zio.*
 import zio.test.*
 
 import java.sql.SQLException
 import javax.sql.DataSource
+
 object CompanyRepositorySpec extends ZIOSpecDefault with RepositorySpec {
 
   override val initScript: String = "sql/companies.sql"
@@ -17,7 +18,17 @@ object CompanyRepositorySpec extends ZIOSpecDefault with RepositorySpec {
     scala.util.Random.alphanumeric.take(8).mkString
   }
   private def genCompany(): Company =
-    Company(-1L, genString(), genString(), genString())
+    Company(
+      -1L,
+      slug = genString(),
+      name = genString(),
+      url = genString(),
+      location = Some(genString()),
+      country = Some(genString()),
+      industry = Some(genString()),
+      tags = (1 to 3).map(_ => genString()).toList
+    )
+
   override def spec: Spec[TestEnvironment with Scope, Any] = suite("CompanyRepositorySpec")(
     test("create a company") {
       val program = for {
@@ -93,6 +104,19 @@ object CompanyRepositorySpec extends ZIOSpecDefault with RepositorySpec {
         case (companies, companiesFetched) =>
           companies.toSet == companiesFetched.toSet
         case _ => false
+      }
+    },
+    test("company filter search by tag") {
+      val program = for {
+        repo    <- ZIO.service[CompanyRepository]
+        company <- repo.create(genCompany())
+        fetched <- repo.search(CompanyFilter(tags = company.tags.headOption.toList))
+      } yield (fetched, company)
+
+      program.assert { case (fetched, company) =>
+        fetched.nonEmpty &&
+        fetched.tail.isEmpty &&
+        fetched.head == company
       }
     }
   ).provide(
