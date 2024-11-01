@@ -76,7 +76,7 @@ abstract class FormPage[S <: FormState](title: String) {
       case Right(message) =>
         div(
           cls := "page-status-success",
-          child.text <-- stateVar.signal.map(_.toString)
+          message
         )
     }
 

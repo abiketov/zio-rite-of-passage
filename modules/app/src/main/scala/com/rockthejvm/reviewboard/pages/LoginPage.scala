@@ -12,25 +12,30 @@ import com.rockthejvm.reviewboard.http.requests.LoginRequest
 import org.scalajs.dom
 import frontroute.*
 
-object LoginPage {
+case class LoginFormState(
+    email: String = "",
+    password: String = "",
+    upstreamError: Option[String] = None,
+    override val showStatus: Boolean = false
+) extends FormState {
 
-  case class State(
-      email: String = "",
-      password: String = "",
-      upstreamError: Option[String] = None,
-      showStatus: Boolean = false
-  ) {
-    val emailFormatError: Option[String] =
-      Option.when(!email.matches(Constants.emailRegex))("Email is invalid")
-    val passwordError: Option[String] = Option.when(password.isEmpty)("Password can't be empty")
+  private val emailFormatError: Option[String] =
+    Option.when(!email.matches(Constants.emailRegex))("Email is invalid")
 
-    val errorList  = List(emailFormatError, passwordError, upstreamError)
-    val mayBeError = errorList.find(_.isDefined).flatten.filter(_ => showStatus)
-    val hasErrors  = errorList.exists(_.isDefined)
-  }
+  private val passwordError: Option[String] =
+    Option.when(password.isEmpty)("Password can't be empty")
 
-  val stateVar = Var[State](State())
-  val submitter = Observer[State] { state =>
+  override val errorList = List(emailFormatError, passwordError, upstreamError)
+
+  override def mayBeSuccess: Option[String] = None
+
+}
+
+object LoginPage extends FormPage[LoginFormState]("Log In") {
+
+  override val stateVar = Var[LoginFormState](LoginFormState())
+
+  val submitter = Observer[LoginFormState] { state =>
     // check state error
     if (state.hasErrors) {
       // if error - show
@@ -43,7 +48,7 @@ object LoginPage {
           // if success, set user token,navigate away
           // TODO set user token
           Session.setUserState(userToken)
-          stateVar.set(State())
+          stateVar.set(LoginFormState())
           BrowserNavigation.replaceState("/")
         }
         .tapError { e =>
@@ -59,41 +64,7 @@ object LoginPage {
     dom.console.log(s"Current state is: $state")
 
   }
-  def apply() = {
-    div(
-      cls := "row",
-      div(
-        cls := "col-md-5 p-0",
-        div(
-          cls := "logo",
-          img(
-            src := Constants.logoImage,
-            alt := "Rock the JVM"
-          )
-        )
-      ),
-      div(
-        cls := "col-md-7",
-        // right
-        div(
-          cls := "form-section",
-          div(cls := "top-section", h1(span("Log In"))),
-          children <-- stateVar.signal
-            .map(_.mayBeError)
-            .map(_.map(renderError))
-            .map(_.toList),
-          maybeRenderSuccess(),
-          form(
-            nameAttr := "signin",
-            cls      := "form",
-            idAttr   := "form",
-            // an input of type text
-            renderChildren()
-          )
-        )
-      )
-    )
-  }
+
 
   def renderChildren() = List(
     renderInput(
@@ -120,53 +91,53 @@ object LoginPage {
     )
   )
 
-  def maybeRenderSuccess(shouldShow: Boolean = false) = {
-
-    if (shouldShow) {
-      div(
-        cls := "page-status-success",
-        child.text <-- stateVar.signal.map(_.toString)
-      )
-    } else div()
-
-  }
-
-  def renderInput(
-      name: String,
-      uid: String,
-      kind: String,
-      isRequired: Boolean,
-      placeHolder: String,
-      updateFn: (State, String) => State
-  ) = {
-    div(
-      cls := "row",
-      div(
-        cls := "col-md-12",
-        div(
-          cls := "form-input",
-          label(
-            forId := uid,
-            cls   := "form-label",
-            if (isRequired) span("*") else span(),
-            name
-          ),
-          input(
-            `type`      := kind,
-            cls         := "form-control",
-            idAttr      := uid,
-            placeholder := placeHolder,
-            onInput.mapToValue --> stateVar.updater(updateFn)
-          )
-        )
-      )
-    )
-  }
-
-  def renderError(error: String) = {
-    div(
-      cls := "page-status-errors",
-      error
-    )
-  }
+//  def maybeRenderSuccess(shouldShow: Boolean = false) = {
+//
+//    if (shouldShow) {
+//      div(
+//        cls := "page-status-success",
+//        child.text <-- stateVar.signal.map(_.toString)
+//      )
+//    } else div()
+//
+//  }
+//
+//  def renderInput(
+//      name: String,
+//      uid: String,
+//      kind: String,
+//      isRequired: Boolean,
+//      placeHolder: String,
+//      updateFn: (LoginFormState, String) => LoginFormState
+//  ) = {
+//    div(
+//      cls := "row",
+//      div(
+//        cls := "col-md-12",
+//        div(
+//          cls := "form-input",
+//          label(
+//            forId := uid,
+//            cls   := "form-label",
+//            if (isRequired) span("*") else span(),
+//            name
+//          ),
+//          input(
+//            `type`      := kind,
+//            cls         := "form-control",
+//            idAttr      := uid,
+//            placeholder := placeHolder,
+//            onInput.mapToValue --> stateVar.updater(updateFn)
+//          )
+//        )
+//      )
+//    )
+//  }
+//
+//  def renderError(error: String) = {
+//    div(
+//      cls := "page-status-errors",
+//      error
+//    )
+//  }
 }
