@@ -1,6 +1,6 @@
 package com.rockthejvm.reviewboard.core
 
-import com.rockthejvm.reviewboard.http.endpoints.CompanyEndpoints
+import com.rockthejvm.reviewboard.http.endpoints.{CompanyEndpoints, UserEndpoints}
 import com.rockthejvm.reviewboard.config.BackendClientConfig
 import sttp.capabilities
 import sttp.capabilities.WebSockets
@@ -13,7 +13,10 @@ import sttp.tapir.client.sttp.SttpClientInterpreter
 import zio.*
 
 trait BackendClient {
+
   val companyEndpoints: CompanyEndpoints
+
+  val userEndpoints: UserEndpoints
 
   def endpointRequestZIO[I, E <: Throwable, O](
       endpoint: Endpoint[Unit, I, E, O, Any]
@@ -27,6 +30,7 @@ class BackendClientLive(
 ) extends BackendClient {
 
   override val companyEndpoints: CompanyEndpoints = new CompanyEndpoints {}
+  override val userEndpoints: UserEndpoints       = new UserEndpoints {}
 
   private def endpointRequest[I, E, O](
       endpoint: Endpoint[Unit, I, E, O, Any]

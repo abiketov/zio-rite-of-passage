@@ -3,6 +3,7 @@ package com.rockthejvm.reviewboard
 import com.raquo.airstream.ownership.OneTimeOwner
 import com.raquo.laminar.api.L.{*, given}
 import com.rockthejvm.reviewboard.components.{Header, Router}
+import com.rockthejvm.reviewboard.core.Session
 import frontroute.LinkHandler
 import org.scalajs.dom
 
@@ -11,6 +12,7 @@ import scala.util.Try
 object App {
 
   val app = div(
+    onMountCallback(_ => Session.loadUserState()),
     Header(),
     Router()
   ).amend(LinkHandler.bind)

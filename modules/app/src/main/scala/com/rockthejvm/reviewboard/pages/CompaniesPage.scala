@@ -34,8 +34,11 @@ object CompaniesPage {
 //    val companiesZIO = useBackend(_.companyEndpoints.getAllEndpoint(()))
 //    companiesZIO.emitTo(companiesBus)
 //  }
+
+  val firstBatch: EventBus[List[Company]] = EventBus[List[Company]]()
+
   val companiesEvents: EventStream[List[Company]] = {
-    useBackend(_.companyEndpoints.getAllEndpoint(())).toEventStream.mergeWith {
+    firstBatch.events.mergeWith {
       filterPanel.triggerFilters.flatMap { filter =>
         useBackend(_.companyEndpoints.searchEndpoint(filter)).toEventStream
       }
@@ -43,7 +46,7 @@ object CompaniesPage {
   }
 
   def apply() = sectionTag(
-    // onMountCallback(_ => performBackendCall()),
+    onMountCallback(_ => useBackend(_.companyEndpoints.getAllEndpoint(())).emitTo(firstBatch)),
     cls := "section-1",
     div(
       cls := "container company-list-hero",

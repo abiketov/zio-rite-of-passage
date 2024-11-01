@@ -3,11 +3,13 @@ package com.rockthejvm.reviewboard.components
 import com.raquo.laminar.api.L.{*, given}
 import com.raquo.laminar.codecs.StringAsIsCodec
 import com.rockthejvm.reviewboard.common.Constants
+import com.rockthejvm.reviewboard.core.Session
 import org.scalajs.dom
 import frontroute.*
 
 import scala.scalajs.js
 import scala.scalajs.js.annotation.*
+import com.rockthejvm.reviewboard.domain.data.UserToken
 
 object Header {
 
@@ -40,7 +42,7 @@ object Header {
                 ul(
                   cls := "navbar-nav ms-auto menu align-center expanded text-center SMN_effect-3",
                   // Add children
-                  renderNavLinks()
+                  children <-- Session.userState.signal.map(renderNavLinks)
                 )
               )
             )
@@ -62,12 +64,24 @@ object Header {
     )
   }
 
-  private def renderNavLinks() = { // List of <li>
-    List(
-      renderNavLink("Companies", "/companies"),
+  private def renderNavLinks(userToken: Option[UserToken]) = { // List of <li>
+    val constantLinks = List(
+      renderNavLink("Companies", "/companies")
+    )
+    val unauthedLinks = List(
       renderNavLink("Log in", "/login"),
       renderNavLink("Sign Up", "/signup")
     )
+    val authedLinks = List(
+      renderNavLink("Add Company", "/post"),
+      renderNavLink("Profile", "/profile"),
+      renderNavLink("Logout", "/logout")
+    )
+
+    val customLinks = if (userToken.nonEmpty) authedLinks else unauthedLinks
+
+    constantLinks ++ customLinks
+
   }
 
   private def renderNavLink(text: String, location: String) = {
