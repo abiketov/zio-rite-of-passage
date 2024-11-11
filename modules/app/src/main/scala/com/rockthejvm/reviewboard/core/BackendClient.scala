@@ -1,6 +1,6 @@
 package com.rockthejvm.reviewboard.core
 
-import com.rockthejvm.reviewboard.http.endpoints.{CompanyEndpoints, UserEndpoints}
+import com.rockthejvm.reviewboard.http.endpoints.{CompanyEndpoints, ReviewEndpoints, UserEndpoints}
 import com.rockthejvm.reviewboard.config.BackendClientConfig
 import sttp.capabilities
 import sttp.capabilities.WebSockets
@@ -12,14 +12,22 @@ import sttp.tapir.Endpoint
 import sttp.tapir.client.sttp.SttpClientInterpreter
 import zio.*
 
+case class RestrictedEndpointException(msg: String) extends RuntimeException(msg)
+
 trait BackendClient {
 
   val companyEndpoints: CompanyEndpoints
 
   val userEndpoints: UserEndpoints
 
+  val reviewEndpoints: ReviewEndpoints
+
   def endpointRequestZIO[I, E <: Throwable, O](
       endpoint: Endpoint[Unit, I, E, O, Any]
+  )(payload: I): Task[O]
+
+  def secureEndpointRequestZIO[I, E <: Throwable, O](
+      endpoint: Endpoint[String, I, E, O, Any]
   )(payload: I): Task[O]
 }
 
@@ -31,6 +39,7 @@ class BackendClientLive(
 
   override val companyEndpoints: CompanyEndpoints = new CompanyEndpoints {}
   override val userEndpoints: UserEndpoints       = new UserEndpoints {}
+  override val reviewEndpoints: ReviewEndpoints   = new ReviewEndpoints {}
 
   private def endpointRequest[I, E, O](
       endpoint: Endpoint[Unit, I, E, O, Any]
@@ -38,11 +47,30 @@ class BackendClientLive(
     interpreter.toRequestThrowDecodeFailures(endpoint, config.uri)
   }
 
+  private def secureEndpointRequest[S, I, E, O](
+      endpoint: Endpoint[S, I, E, O, Any]
+  ): S => I => Request[Either[E, O], Any] = {
+    interpreter.toSecureRequestThrowDecodeFailures(endpoint, config.uri)
+  }
+
   override def endpointRequestZIO[I, E <: Throwable, O](
       endpoint: Endpoint[Unit, I, E, O, Any]
   )(payload: I): Task[O] = {
     backend.send(endpointRequest(endpoint)(payload)).map(_.body).absolve
   }
+
+  private def tokenOrFail: ZIO[Any, RestrictedEndpointException, String] = ZIO
+    .fromOption(Session.getUserState)
+    .orElseFail(RestrictedEndpointException("You need to login"))
+    .map(_.token)
+
+  override def secureEndpointRequestZIO[I, E <: Throwable, O](
+      endpoint: Endpoint[String, I, E, O, Any]
+  )(payload: I): Task[O] =
+    for {
+      token    <- tokenOrFail
+      response <- backend.send(secureEndpointRequest(endpoint)(token)(payload)).map(_.body).absolve
+    } yield response
 
 }
 

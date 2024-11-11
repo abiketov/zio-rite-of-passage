@@ -7,6 +7,7 @@ import sttp.tapir.client.sttp.SttpClientInterpreter
 import zio.*
 import com.rockthejvm.reviewboard.core.ZJS.*
 import com.rockthejvm.reviewboard.core.*
+import com.rockthejvm.reviewboard.components.*
 import com.rockthejvm.reviewboard.http.endpoints.UserEndpoints
 import com.rockthejvm.reviewboard.http.requests.LoginRequest
 import org.scalajs.dom
@@ -33,7 +34,7 @@ case class LoginFormState(
 
 object LoginPage extends FormPage[LoginFormState]("Log In") {
 
-  override val stateVar = Var[LoginFormState](LoginFormState())
+  override def basicState = LoginFormState()
 
   val submitter = Observer[LoginFormState] { state =>
     // check state error
@@ -65,7 +66,6 @@ object LoginPage extends FormPage[LoginFormState]("Log In") {
 
   }
 
-
   def renderChildren() = List(
     renderInput(
       "Email",
@@ -88,6 +88,10 @@ object LoginPage extends FormPage[LoginFormState]("Log In") {
       `type` := "button",
       "Log In",
       onClick.preventDefault.mapTo(stateVar.now()) --> submitter
+    ),
+    div(
+      cls := "auth-link",
+      Anchors.renderNavLink("Forgot password?", "/forgot")
     )
   )
 

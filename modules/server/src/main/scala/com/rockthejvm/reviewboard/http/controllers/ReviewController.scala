@@ -19,7 +19,7 @@ class ReviewController private (reviewService: ReviewService, jwtService: JWTSer
     getByIdEndpoint.serverLogic(id => reviewService.getById(id).either)
 
   val getByCompanyId: ServerEndpoint[Any, Task] =
-    getCompanyIdEndpoint.serverLogic(companyId => reviewService.getByCompanyId(companyId).either)
+    getByCompanyIdEndpoint.serverLogic(companyId => reviewService.getByCompanyId(companyId).either)
 
   override val routes: List[ServerEndpoint[Any, Task]] =
     List(create, getById, getByCompanyId)

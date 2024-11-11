@@ -12,6 +12,8 @@ import sttp.capabilities.zio.ZioStreams
 import sttp.model.Uri
 import sttp.tapir.Endpoint
 
+import scala.annotation.targetName
+
 object ZJS {
 
   // def useBackend[A](clientFunc: BackendClient => Task[A]): ZIO[BackendClient, Throwable, A] =
@@ -40,17 +42,27 @@ object ZJS {
 
     def runJs() =
       Unsafe.unsafe { implicit unsafe =>
-        Runtime.default.unsafe.runToFuture(
+        Runtime.default.unsafe.fork(
           zio.provide(BackendClientLive.configuredLayer)
         )
       }
 
   }
 
-  extension [I, E <: Throwable, O](endpoint: Endpoint[Unit, I, E, O, Any])
+  extension [I, E <: Throwable, O](endpoint: Endpoint[Unit, I, E, O, Any]) {
     def apply(payload: I): Task[O] =
       ZIO
         .service[BackendClient]
         .flatMap(backendClient => backendClient.endpointRequestZIO(endpoint)(payload))
         .provide(BackendClientLive.configuredLayer)
+  }
+
+  extension [I, E <: Throwable, O](endpoint: Endpoint[String, I, E, O, Any]) {
+    @targetName("applySecure")
+    def apply(payload: I): Task[O] =
+      ZIO
+        .service[BackendClient]
+        .flatMap(backendClient => backendClient.secureEndpointRequestZIO(endpoint)(payload))
+        .provide(BackendClientLive.configuredLayer)
+  }
 }

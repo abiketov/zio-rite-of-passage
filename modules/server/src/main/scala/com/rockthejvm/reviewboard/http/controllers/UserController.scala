@@ -25,7 +25,7 @@ class UserController private (userService: UserService, jwtService: JWTService)
   val login: ServerEndpoint[Any, Task] = loginEndpoint.serverLogic { req =>
     userService
       .generateToken(req.email, req.password)
-      .someOrFail(UnauthorizedException)
+      .someOrFail(UnauthorizedException("User log in failed. CHeck your credentials"))
       .either
   }
 
@@ -57,7 +57,7 @@ class UserController private (userService: UserService, jwtService: JWTService)
     .serverLogic { req =>
       userService
         .recoverPasswordFromToken(req.email, req.token, req.newPassword)
-        .filterOrFail(b => b)(UnauthorizedException)
+        .filterOrFail(b => b)(UnauthorizedException("The email/token combination is invalid"))
         .unit
         .either
     }

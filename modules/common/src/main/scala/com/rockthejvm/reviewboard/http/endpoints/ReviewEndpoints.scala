@@ -30,7 +30,7 @@ trait ReviewEndpoints extends BaseEndPoint {
 
   // get /reviews/company/id - get reviews by company id
   // returns List[Review]
-  val getCompanyIdEndpoint = baseEndPoint
+  val getByCompanyIdEndpoint = baseEndPoint
     .tag("Reviews")
     .name("getByCompanyId")
     .description("Get a review by company id")

@@ -1,6 +1,7 @@
 package com.rockthejvm.reviewboard.services
 
 import com.rockthejvm.reviewboard.domain.data.{User, UserToken}
+import com.rockthejvm.reviewboard.domain.errors.UnauthorizedException
 import com.rockthejvm.reviewboard.repositories.{RecoveryTokensRepository, UserRepository}
 import zio.*
 
@@ -86,14 +87,14 @@ class UserServiceLive private (
     for {
       existingUser <- userRepo
         .getByEmail(email)
-        .someOrFail(new RuntimeException(s"User with email $email is not found"))
+        .someOrFail(UnauthorizedException(s"User with email $email is not found"))
       verified <- ZIO.attempt(
         UserServiceLive.Hasher.validateHash(password, existingUser.hashedPassword)
       )
       deletedUser <- userRepo
         .delete(existingUser.id)
         .when(verified)
-        .someOrFail(new RuntimeException(s"Could not update password for email $email"))
+        .someOrFail(UnauthorizedException(s"Could not update password for email $email"))
 
     } yield deletedUser
 
@@ -105,7 +106,7 @@ class UserServiceLive private (
     for {
       existingUser <- userRepo
         .getByEmail(email)
-        .someOrFail(new RuntimeException(s"User with email $email is not found"))
+        .someOrFail(UnauthorizedException(s"User with email $email is not found"))
       _ <- ZIO.succeed(println(existingUser))
       verified <- ZIO.attempt(
         UserServiceLive.Hasher.validateHash(password, existingUser.hashedPassword)
@@ -137,7 +138,7 @@ class UserServiceLive private (
     for {
       existingUser <- userRepo
         .getByEmail(email)
-        .someOrFail(new RuntimeException(s"User with email ${email} not found!"))
+        .someOrFail(UnauthorizedException(s"User with email ${email} not found!"))
       tokenIsValid <- tokenRepo.checkToken(email, token)
       result <- userRepo
         .update(

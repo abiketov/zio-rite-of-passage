@@ -93,9 +93,18 @@ class RecoveryTokensRepositoryLive private (
     }
   }
 
-  override def checkToken(email: String, token: String): Task[Boolean] =
-    run(query[PasswordRecoveryToken].filter(r => r.email == lift(email) && r.token == lift(token)))
-      .map(_.nonEmpty)
+  override def checkToken(email: String, token: String): Task[Boolean] = {
+    for {
+      now <- Clock.instant
+      checkValid <- run(
+        query[PasswordRecoveryToken].filter(r =>
+          r.email == lift(email) && r.token == lift(token) && r.expiration > lift(now.toEpochMilli)
+        )
+      )
+        .map(_.nonEmpty)
+    } yield checkValid
+
+  }
 }
 
 object RecoveryTokensRepositoryLive {

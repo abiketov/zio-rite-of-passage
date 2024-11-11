@@ -67,7 +67,7 @@ object ReviewControllerSpec extends ZIOSpecDefault {
   val stubJwtLayer = ZLayer.succeed {
     new JWTService {
       override def createToken(user: User): Task[UserToken] =
-        ZIO.succeed(UserToken(user.email, "SECRET", 10000))
+        ZIO.succeed(UserToken(1L, user.email, "SECRET", 10000))
 
       override def verifyToken(token: String): Task[UserId] =
         ZIO.succeed(UserId(daniel.id, daniel.email))

@@ -71,43 +71,6 @@ object CompaniesPage {
     )
   )
 
-  private def renderCompanyPicture(company: Company) = {
-    img(
-      cls := "img-fluid",
-      src := company.image.getOrElse(Constants.companyLogoImage),
-      alt := company.name
-    )
-  }
-
-  private def renderDetail(icon: String, value: String) = {
-    div(
-      cls := "company-detail",
-      i(cls := s"fa fa-$icon company-detail-icon"),
-      p(
-        cls := "company-detail-value",
-        value
-      )
-    )
-  }
-
-  private def fullLocationString(company: Company): String = {
-
-    (company.location, company.country) match {
-      case (Some(l), Some(c)) => s"$l, $c"
-      case (None, Some(c))    => c
-      case (Some(l), None)    => l
-      case (None, None)       => "N/A"
-    }
-  }
-
-  private def renderOverview(company: Company) = {
-    div(
-      cls := "company-summary",
-      renderDetail("location-dot", fullLocationString(company)),
-      renderDetail("tags", company.tags.mkString(","))
-    )
-  }
-
   private def renderAction(company: Company) = {
     div(
       cls := "jvm-recent-companies-card-btn-apply",
@@ -129,7 +92,7 @@ object CompaniesPage {
       cls := "jvm-recent-companies-cards",
       div(
         cls := "jvm-recent-companies-card-img",
-        renderCompanyPicture(company)
+        CompanyComponent.renderCompanyPicture(company)
       ),
       div(
         cls := "jvm-recent-companies-card-contents",
@@ -140,7 +103,7 @@ object CompaniesPage {
             "company-title-link"
           )
         ),
-        renderOverview(company)
+        CompanyComponent.renderOverview(company)
       ),
       renderAction(company)
     )

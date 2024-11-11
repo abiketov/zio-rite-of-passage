@@ -22,8 +22,23 @@ object Router {
           path("signup") {
             SignupPage()
           },
+          path("profile") {
+            ProfilePage()
+          },
           path("logout") {
             LogoutPage()
+          },
+          path("forgot") {
+            ForgotPasswordPage()
+          },
+          path("recover") {
+            RecoverPasswordPage()
+          },
+          path("post") {
+            CreateCompanyPage()
+          },
+          path("company" / long) { companyId =>
+            CompanyPage(companyId)
           },
           noneMatched {
             NotFoundPage()
