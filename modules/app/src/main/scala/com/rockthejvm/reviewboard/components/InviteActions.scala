@@ -85,7 +85,7 @@ object InviteActions {
       onMountCallback(_ => refreshInviteList().emitTo(inviteListBus)),
       cls := "profile-section",
       h3(span("Invite Actions")),
-      children <-- inviteListBus.events.map(_.sortBy(_.companyName)).map(renderInviteRecord))
+      children <-- inviteListBus.events.map(_.sortBy(_.companyName).map(inr => renderInviteRecord(inr)))
     )
   }
 }
