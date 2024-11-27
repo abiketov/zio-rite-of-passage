@@ -1,9 +1,9 @@
 package com.rockthejvm.reviewboard.services
 
-import com.rockthejvm.reviewboard.domain.data.{User, UserId, UserToken}
+import com.rockthejvm.reviewboard.domain.data.{Company, User, UserId, UserToken}
 import com.rockthejvm.reviewboard.repositories.{RecoveryTokensRepository, UserRepository}
 import zio.*
-import zio.test.{assertTrue, Spec, TestEnvironment, ZIOSpecDefault}
+import zio.test.{Spec, TestEnvironment, ZIOSpecDefault, assertTrue}
 
 object UserServiceSpec extends ZIOSpecDefault {
 
@@ -67,6 +67,10 @@ object UserServiceSpec extends ZIOSpecDefault {
       override def sendEmail(to: String, subject: String, content: String): Task[Unit] = ZIO.unit
 
       override def sendPasswordRecoveryEmail(to: String, token: String): Task[Unit] = ZIO.unit
+
+      override def sendReviewInvite(sender: String, to: String, company: Company): Task[Unit] = ZIO.unit
+
+
   }
 
   val stubJwtLayer = ZLayer.succeed {

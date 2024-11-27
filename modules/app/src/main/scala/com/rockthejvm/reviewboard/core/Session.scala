@@ -25,8 +25,9 @@ object Session {
       .get[UserToken](stateName)
       .filter(token => token.expires * 1000 < new Date().getTime())
       .foreach(token => Storage.remove(stateName))
-
-    userState.set(Storage.get[UserToken](stateName))
+    val currentToken = Storage.get[UserToken](stateName)
+    if (userState.now() != currentToken)
+      userState.set(Storage.get[UserToken](stateName))
   }
 
   def clearUserState(): Unit = {

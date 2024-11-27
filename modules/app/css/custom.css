@@ -8,4 +8,29 @@
     line-height: 1.25rem;
 
 }
+.invite-error {
+    text-align: left;
+    color: red;
+    padding: 0.5rem 0;
+}
 
+.profile-section {
+    align-self: start;
+    margin: 2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+}
+.invites-area {
+    display: block;
+    width: 100%;
+    min-height: 7rem;
+    resize: vertical;
+    height: 130px;
+    padding: 0.5rem 0.5rem;
+
+}
+.invite-record {
+    margin-bottom: 0.5rem;
+}

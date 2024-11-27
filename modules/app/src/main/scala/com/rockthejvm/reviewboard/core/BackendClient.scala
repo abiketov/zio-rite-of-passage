@@ -1,6 +1,11 @@
 package com.rockthejvm.reviewboard.core
 
-import com.rockthejvm.reviewboard.http.endpoints.{CompanyEndpoints, ReviewEndpoints, UserEndpoints}
+import com.rockthejvm.reviewboard.http.endpoints.{
+  CompanyEndpoints,
+  InviteEndpoints,
+  ReviewEndpoints,
+  UserEndpoints
+}
 import com.rockthejvm.reviewboard.config.BackendClientConfig
 import sttp.capabilities
 import sttp.capabilities.WebSockets
@@ -22,6 +27,8 @@ trait BackendClient {
 
   val reviewEndpoints: ReviewEndpoints
 
+  val inviteEndpoints: InviteEndpoints
+
   def endpointRequestZIO[I, E <: Throwable, O](
       endpoint: Endpoint[Unit, I, E, O, Any]
   )(payload: I): Task[O]
@@ -40,6 +47,7 @@ class BackendClientLive(
   override val companyEndpoints: CompanyEndpoints = new CompanyEndpoints {}
   override val userEndpoints: UserEndpoints       = new UserEndpoints {}
   override val reviewEndpoints: ReviewEndpoints   = new ReviewEndpoints {}
+  override val inviteEndpoints: InviteEndpoints   = new InviteEndpoints {}
 
   private def endpointRequest[I, E, O](
       endpoint: Endpoint[Unit, I, E, O, Any]

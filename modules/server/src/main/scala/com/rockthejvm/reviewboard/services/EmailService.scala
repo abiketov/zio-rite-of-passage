@@ -1,6 +1,7 @@
 package com.rockthejvm.reviewboard.services
 
 import com.rockthejvm.reviewboard.config.{Configs, EmailServiceConfig}
+import com.rockthejvm.reviewboard.domain.data.Company
 import zio.*
 
 import java.util.Properties
@@ -11,7 +12,7 @@ trait EmailService {
 
   def sendEmail(to: String, subject: String, content: String): Task[Unit]
   def sendPasswordRecoveryEmail(to: String, token: String): Task[Unit]
-
+  def sendReviewInvite(sender: String, to: String, company: Company): Task[Unit]
 }
 
 class EmailServiceLive private (config: EmailServiceConfig) extends EmailService {
@@ -81,6 +82,25 @@ class EmailServiceLive private (config: EmailServiceConfig) extends EmailService
     sendEmail(to, subject, contentStr)
   }
 
+  override def sendReviewInvite(sender: String, to: String, company: Company): Task[Unit] = {
+    val subject = s"Invitation to review ${company.name}"
+    val contentStr: String =
+      s"""
+         |<div style="border: 1px solid black; padding: 20px; font-family: sans-serif;font-size: 15px;">
+         | <h1> You invited to review ${company.name} </h1>
+         | <p>
+         |  Go to: 
+         |  <a href="http://localhost:1234/company/${company.id}">this link</a>
+         |  to add your thoughts on the app. 
+         | </p>
+         | <p> 
+         | From Rock the JVM.
+         | </p>
+         |</div>
+         |""".stripMargin
+
+    sendEmail(to, subject, contentStr)
+  }
 }
 
 object EmailServiceLive {

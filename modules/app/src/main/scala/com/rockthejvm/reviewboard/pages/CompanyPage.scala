@@ -16,48 +16,6 @@ import java.time.Instant
 
 object CompanyPage {
 
-  val dummyReviews = List(
-    Review(
-      1,
-      1,
-      1L,
-      5,
-      5,
-      5,
-      5,
-      5,
-      "This is a pretty good company. They write Scala and that's great",
-      Instant.now(),
-      Instant.now()
-    ),
-    Review(
-      1,
-      1,
-      1L,
-      3,
-      4,
-      3,
-      4,
-      4,
-      "Pretty average. Not sure what to think about it. But here's some Markdown: _italics_, **bold**, ~strikethrough~.",
-      Instant.now(),
-      Instant.now()
-    ),
-    Review(
-      1,
-      1,
-      1L,
-      1,
-      1,
-      1,
-      1,
-      1,
-      "Hate it with a passion.",
-      Instant.now(),
-      Instant.now()
-    )
-  )
-
   // the render function
 
   enum Status {
@@ -69,7 +27,9 @@ object CompanyPage {
   // reactive variable
   private val fetchCompanyBus     = EventBus[Option[Company]]()
   private val addReviewCardActive = Var[Boolean](false)
-  val triggerRefreshBus           = EventBus[Unit]()
+
+  val triggerRefreshBus = EventBus[Unit]()
+  val inviteErrorBus    = EventBus[String]()
 
   def refreshReviewList(companyId: Long): EventStream[List[Review]] = {
     useBackend(_.reviewEndpoints.getByCompanyIdEndpoint(companyId)).toEventStream
@@ -94,6 +54,11 @@ object CompanyPage {
       case Some(company) => Status.OK(company)
     }
   )
+
+  def startPaymentFlow(companyId: Long) =
+    useBackend(_.inviteEndpoints.addPackPromotedEndpoint(InvitePackRequest(companyId)))
+      .tapError(e => ZIO.succeed(inviteErrorBus.emit(e.getMessage)))
+      .emitTo(Router.externalUrlBus)
 
   def apply(companyId: Long) = {
     div(
@@ -146,33 +111,43 @@ object CompanyPage {
         )
         .map(_.toList),
       children <-- reviewSignal.map(_.map(renderReview)),
+      child.maybe <-- Session.userState.signal.map(_.map(_ => renderInviteAction(company)))
+    )
+  )
+
+  def renderInviteAction(company: Company) = {
+    div(
+      cls := "container",
       div(
-        cls := "container",
+        cls := "rok-last",
         div(
-          cls := "rok-last",
+          cls := "row invite-row",
           div(
-            cls := "row invite-row",
-            div(
-              cls := "col-md-6 col-sm-6 col-6",
-              span(
-                cls := "rock-apply",
-                p("Do you represent this company?"),
-                p("Invite people to leave reviews.")
-              )
-            ),
-            div(
-              cls := "col-md-6 col-sm-6 col-6",
-              a(
-                href   := company.url,
-                target := "blank",
-                button(`type` := "button", cls := "rock-action-btn", "Invite people")
-              )
+            cls := "col-md-6 col-sm-6 col-6",
+            span(
+              cls := "rock-apply",
+              p("Do you represent this company?"),
+              p("Invite people to leave reviews.")
+            )
+          ),
+          div(
+            cls := "col-md-6 col-sm-6 col-6",
+            button(
+              `type` := "button",
+              cls    := "rock-action-btn",
+              "Invite people",
+              disabled <-- inviteErrorBus.events.mapTo(true).startWith(false),
+              onClick.mapToUnit --> (_ => startPaymentFlow(company.id))
             )
           )
+        ),
+        div(
+          cls := "invite-error",
+          child.text <-- inviteErrorBus.events
         )
       )
     )
-  )
+  }
 
   def maybeRenderUserAction(maybeUser: Option[UserToken], reviewsSignal: Signal[List[Review]]) = {
 

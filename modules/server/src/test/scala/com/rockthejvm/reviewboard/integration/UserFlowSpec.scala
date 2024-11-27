@@ -1,7 +1,7 @@
 package com.rockthejvm.reviewboard.integration
 
 import com.rockthejvm.reviewboard.config.{JWTConfig, RecoveryTokensConfig}
-import com.rockthejvm.reviewboard.domain.data.UserToken
+import com.rockthejvm.reviewboard.domain.data.{Company, UserToken}
 import com.rockthejvm.reviewboard.http.controllers.UserController
 import com.rockthejvm.reviewboard.http.requests.{
   DeleteAccountRequest,
@@ -116,6 +116,9 @@ object UserFlowSpec extends ZIOSpecDefault with RepositorySpec {
 
     // specific to the test
     def probeToken(email: String): Task[Option[String]] = ZIO.succeed(db.get(email))
+
+    override def sendReviewInvite(sender: String, to: String, company: Company): Task[Unit] =
+      ZIO.unit
   }
 
   val emailServiceLayer = ZLayer.succeed(
